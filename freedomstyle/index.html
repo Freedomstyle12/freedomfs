@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FreedomStyle - Modern Fashion Store</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script>
+    (function () {
+      emailjs.init("freedomstylefs12");
+    })();
+  </script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <div class="logo-circle">FS</div>
+                    <span class="logo-text">
+                        <span class="primary-text">Freedom</span>
+                        <span class="secondary-text">Style</span>
+                    </span>
+                </a>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="collections.html">Collections</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-icons">
+                <a href="account.html" class="icon-link">
+                    <i class="fas fa-user"></i>
+                </a>
+                <a href="cart.html" class="icon-link cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </a>
+            </div>
+            <div class="mobile-toggle" id="mobileToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Express Your Style <span class="highlight">Freedom</span></h1>
+                    <p class="hero-subtitle">Discover our premium collection of modern, comfortable clothing designed for the confident individual.</p>
+                    <div class="hero-buttons">
+                        <a href="shop.html" class="btn btn-primary btn-lg btn-shine">Shop Now</a>
+                        <a href="collections.html" class="btn btn-outline btn-lg">View Collections</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="https://via.placeholder.com/600x700" alt="FreedomStyle Fashion Model">
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Categories -->
+        <section class="featured-categories">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Featured Categories</h2>
+                    <p>Explore our most popular clothing categories</p>
+                </div>
+                <div class="category-grid">
+                    <a href="category.html?category=shirts" class="category-card">
+                        <div class="category-image">
+                            <img src="https://via.placeholder.com/300x400" alt="Shirts">
+                        </div>
+                        <div class="category-title">
+                            <h3>Shirts</h3>
+                            <span class="arrow-icon"><i class="fas fa-arrow-right"></i></span>
+                        </div>
+                    </a>
+                    <a href="category.html?category=pants" class="category-card">
+                        <div class="category-image">
+                            <img src="https://via.placeholder.com/300x400" alt="Pants">
+                        </div>
+                        <div class="category-title">
+                            <h3>Pants</h3>
+                            <span class="arrow-icon"><i class="fas fa-arrow-right"></i></span>
+                        </div>
+                    </a>
+                    <a href="category.html?category=jackets" class="category-card">
+                        <div class="category-image">
+                            <img src="https://via.placeholder.com/300x400" alt="Jackets">
+                        </div>
+                        <div class="category-title">
+                            <h3>Jackets</h3>
+                            <span class="arrow-icon"><i class="fas fa-arrow-right"></i></span>
+                        </div>
+                    </a>
+                    <a href="category.html?category=accessories" class="category-card">
+                        <div class="category-image">
+                            <img src="https://via.placeholder.com/300x400" alt="Accessories">
+                        </div>
+                        <div class="category-title">
+                            <h3>Accessories</h3>
+                            <span class="arrow-icon"><i class="fas fa-arrow-right"></i></span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Products -->
+        <section class="featured-products">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Featured Products</h2>
+                    <p>Our best selling styles this season</p>
+                </div>
+                <div class="product-grid">
+                    <div class="product-card">
+                        <div class="product-badge">New</div>
+                        <div class="product-image">
+                            <img src="https://via.placeholder.com/300x400" alt="Classic Button-Up Shirt">
+                            <div class="product-actions">
+                                <button class="btn-circle"><i class="fas fa-eye"></i></button>
+                                <button class="btn-circle"><i class="fas fa-heart"></i></button>
+                                <button class="btn-circle add-to-cart-btn"><i class="fas fa-shopping-cart"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Classic Button-Up Shirt</h3>
+                            <div class="product-price">$45.00</div>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <span>(24)</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-badge sale">Sale</div>
+                        <div class="product-image">
+                            <img src="https://via.placeholder.com/300x400" alt="Premium Denim Jeans">
+                            <div class="product-actions">
+                                <button class="btn-circle"><i class="fas fa-eye"></i></button>
+                                <button class="btn-circle"><i class="fas fa-heart"></i></button>
+                                <button class="btn-circle add-to-cart-btn"><i class="fas fa-shopping-cart"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Premium Denim Jeans</h3>
+                            <div class="product-price">
+                                <span class="original-price">$75.00</span>
+                                $59.99
+                            </div>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span>(41)</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://via.placeholder.com/300x400" alt="Classic Leather Jacket">
+                            <div class="product-actions">
+                                <button class="btn-circle"><i class="fas fa-eye"></i></button>
+                                <button class="btn-circle"><i class="fas fa-heart"></i></button>
+                                <button class="btn-circle add-to-cart-btn"><i class="fas fa-shopping-cart"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Classic Leather Jacket</h3>
+                            <div class="product-price">$129.99</div>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <span>(18)</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-badge best">Best Seller</div>
+                        <div class="product-image">
+                            <img src="https://via.placeholder.com/300x400" alt="Cotton Graphic T-Shirt">
+                            <div class="product-actions">
+                                <button class="btn-circle"><i class="fas fa-eye"></i></button>
+                                <button class="btn-circle"><i class="fas fa-heart"></i></button>
+                                <button class="btn-circle add-to-cart-btn"><i class="fas fa-shopping-cart"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Cotton Graphic T-Shirt</h3>
+                            <div class="product-price">$32.99</div>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span>(87)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="view-all-container">
+                    <a href="shop.html" class="btn btn-outline">View All Products</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Collections Banner -->
+        <section class="collections-banner">
+            <div class="container">
+                <div class="banner-grid">
+                    <div class="banner-item large">
+                        <div class="banner-image">
+                            <img src="https://via.placeholder.com/800x600" alt="Summer Collection">
+                        </div>
+                        <div class="banner-content">
+                            <h3>Summer Collection 2025</h3>
+                            <p>Light fabrics, vibrant colors, and effortless style</p>
+                            <a href="collections.html" class="btn btn-light">Explore Collection</a>
+                        </div>
+                    </div>
+                    <div class="banner-item">
+                        <div class="banner-image">
+                            <img src="https://via.placeholder.com/400x300" alt="New Arrivals">
+                        </div>
+                        <div class="banner-content">
+                            <h3>New Arrivals</h3>
+                            <p>Fresh styles added weekly</p>
+                            <a href="category.html?category=new-arrivals" class="btn btn-sm btn-light">Shop Now</a>
+                        </div>
+                    </div>
+                    <div class="banner-item">
+                        <div class="banner-image">
+                            <img src="https://via.placeholder.com/400x300" alt="Accessories">
+                        </div>
+                        <div class="banner-content">
+                            <h3>Accessories</h3>
+                            <p>Complete your look</p>
+                            <a href="category.html?category=accessories" class="btn btn-sm btn-light">Shop Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features">
+            <div class="container">
+                <div class="features-grid">
+                    <div class="feature">
+                        <div class="feature-icon">
+                            <i class="fas fa-truck"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Free Shipping</h3>
+                            <p>On orders over $100</p>
+                        </div>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">
+                            <i class="fas fa-credit-card"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Secure Payments</h3>
+                            <p>Safe & protected checkout</p>
+                        </div>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">
+                            <i class="fas fa-undo"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Easy Returns</h3>
+                            <p>30-day return policy</p>
+                        </div>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>24/7 Support</h3>
+                            <p>Get help when you need it</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Instagram Feed Section -->
+        <section class="instagram-feed">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Follow Our Style</h2>
+                    <p>Tag us on Instagram <a href="https://instagram.com/freedomstyle" class="instagram-link">@freedomstyle</a></p>
+                </div>
+                <div class="instagram-grid">
+                    <a href="#" class="instagram-item">
+                        <img src="https://via.placeholder.com/300x300" alt="Instagram Post">
+                        <div class="instagram-overlay">
+                            <i class="fab fa-instagram"></i>
+                        </div>
+                    </a>
+                    <a href="#" class="instagram-item">
+                        <img src="https://via.placeholder.com/300x300" alt="Instagram Post">
+                        <div class="instagram-overlay">
+                            <i class="fab fa-instagram"></i>
+                        </div>
+                    </a>
+                    <a href="#" class="instagram-item">
+                        <img src="https://via.placeholder.com/300x300" alt="Instagram Post">
+                        <div class="instagram-overlay">
+                            <i class="fab fa-instagram"></i>
+                        </div>
+                    </a>
+                    <a href="#" class="instagram-item">
+                        <img src="https://via.placeholder.com/300x300" alt="Instagram Post">
+                        <div class="instagram-overlay">
+                            <i class="fab fa-instagram"></i>
+                        </div>
+                    </a>
+                    <a href="#" class="instagram-item">
+                        <img src="https://via.placeholder.com/300x300" alt="Instagram Post">
+                        <div class="instagram-overlay">
+                            <i class="fab fa-instagram"></i>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter Section -->
+        <section class="newsletter">
+            <div class="container">
+                <div class="newsletter-content">
+                    <div class="newsletter-image">
+                        <img src="https://via.placeholder.com/400x300" alt="Subscribe to our newsletter">
+                    </div>
+                    <div class="newsletter-text">
+                        <h2>Stay Updated</h2>
+                        <p>Subscribe to our newsletter to receive updates on new products, special offers, and styling tips.</p>
+                        <form class="newsletter-form">
+                            <input type="email" placeholder="Your email address" required>
+                            <button type="submit" class="btn btn-primary">Subscribe</button>
+                        </form>
+                        <p class="newsletter-privacy">By subscribing, you agree to our <a href="#">Privacy Policy</a>. We respect your privacy.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-newsletter">
+                    <h3>Subscribe to our Newsletter</h3>
+                    <p>Get the latest updates, news and special offers sent directly to your inbox.</p>
+                    <form class="footer-form">
+                        <input type="email" placeholder="Your email address" required>
+                        <button class="btn btn-secondary">Subscribe</button>
+                    </form>
+                </div>
+                
+                <div class="footer-features">
+                    <div class="feature">
+                        <div class="feature-icon"><i class="fas fa-truck"></i></div>
+                        <div class="feature-text">
+                            <h4>Free Shipping</h4>
+                            <p>On orders over $100</p>
+                        </div>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon"><i class="fas fa-credit-card"></i></div>
+                        <div class="feature-text">
+                            <h4>Secure Payments</h4>
+                            <p>Protected & safe</p>
+                        </div>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
+                        <div class="feature-text">
+                            <h4>Money-Back Guarantee</h4>
+                            <p>30-day return policy</p>
+                        </div>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon"><i class="fas fa-phone"></i></div>
+                        <div class="feature-text">
+                            <h4>Customer Support</h4>
+                            <p>24/7 assistance</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-main">
+                <div class="footer-company">
+                    <div class="footer-logo">
+                        <div class="logo-circle light">FS</div>
+                        <span class="logo-text">
+                            <span class="light-text">Freedom</span>
+                            <span class="secondary-text">Style</span>
+                        </span>
+                    </div>
+                    <p>Express yourself with our premium collection of stylish clothing for every occasion.</p>
+                    <div class="company-info">
+                        <p><i class="fas fa-map-marker-alt"></i> 123 FreedomStyle Blvd, New York, NY 10001</p>
+                        <p><i class="fas fa-phone"></i> 03378251481</p>
+                        <p><i class="fab fa-whatsapp"></i> WhatsApp: 03378251481</p>
+                        <p><i class="fas fa-envelope"></i> freedomstylefs12@gmail.com</p>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="link-group">
+                        <h3>Shop</h3>
+                        <ul>
+                            <li><a href="category.html?category=new-arrivals">New Arrivals</a></li>
+                            <li><a href="category.html?category=best-sellers">Best Sellers</a></li>
+                            <li><a href="category.html?category=sale">Sale</a></li>
+                            <li><a href="category.html?category=shirts">Shirts</a></li>
+                            <li><a href="category.html?category=pants">Pants</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-group">
+                        <h3>Information</h3>
+                        <ul>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="blog.html">Blog</a></li>
+                            <li><a href="contact.html">Contact Us</a></li>
+                            <li><a href="#">FAQs</a></li>
+                            <li><a href="#">Shipping & Returns</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-group">
+                        <h3>Account</h3>
+                        <ul>
+                            <li><a href="#">My Account</a></li>
+                            <li><a href="#">Track Order</a></li>
+                            <li><a href="#">Wish List</a></li>
+                            <li><a href="#">Order History</a></li>
+                            <li><a href="cart.html">My Cart</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear"></span> FreedomStyle. All rights reserved.</p>
+                <button id="backToTop" class="back-to-top">
+                    Back to top <i class="fas fa-arrow-up"></i>
+                </button>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Background Elements -->
+    <div class="gradient-blob-1"></div>
+    <div class="gradient-blob-2"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set current year in footer
+            document.getElementById('currentYear').textContent = new Date().getFullYear();
+            
+            // Mobile menu toggle
+            const mobileToggle = document.getElementById('mobileToggle');
+            const navLinks = document.getElementById('navLinks');
+            
+            if (mobileToggle && navLinks) {
+                mobileToggle.addEventListener('click', function() {
+                    navLinks.classList.toggle('active');
+                    
+                    // Change icon based on menu state
+                    const icon = mobileToggle.querySelector('i');
+                    if (navLinks.classList.contains('active')) {
+                        icon.classList.remove('fa-bars');
+                        icon.classList.add('fa-times');
+                    } else {
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    }
+                });
+            }
+            
+            // Back to top functionality
+            const backToTopButton = document.getElementById('backToTop');
+            if (backToTopButton) {
+                backToTopButton.addEventListener('click', function() {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                });
+            }
+            
+            // Navbar scroll effect
+            const navbar = document.querySelector('.navbar');
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            });
+            
+            // Initialize cart if it doesn't exist
+            if (!localStorage.getItem('cart')) {
+                localStorage.setItem('cart', JSON.stringify([]));
+            }
+            
+            // Update cart count
+            updateCartCount();
+            
+            // Add to cart functionality
+            const addToCartButtons = document.querySelectorAll('.add-to-cart-btn');
+            addToCartButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const productCard = this.closest('.product-card');
+                    const productName = productCard.querySelector('.product-title').textContent;
+                    const productImage = productCard.querySelector('.product-image img').src;
+                    let productPrice = productCard.querySelector('.product-price').textContent;
+                    
+                    // Handle sale prices (get only the discounted price)
+                    if (productPrice.includes('$')) {
+                        productPrice = productPrice.split('$').pop().trim();
+                    }
+                    
+                    const product = {
+                        name: productName,
+                        price: parseFloat(productPrice),
+                        quantity: 1,
+                        image: productImage,
+                        variant: ''
+                    };
+                    
+                    addToCart(product);
+                    showCartMessage(productName);
+                    updateCartCount();
+                });
+            });
+            
+            // Function to add product to cart
+            function addToCart(product) {
+                const cart = JSON.parse(localStorage.getItem('cart')) || [];
+                
+                // Check if product already exists in cart
+                const existingProductIndex = cart.findIndex(item => 
+                    item.name === product.name && item.variant === product.variant
+                );
+                
+                if (existingProductIndex !== -1) {
+                    // Increase quantity if product already in cart
+                    cart[existingProductIndex].quantity += product.quantity;
+                } else {
+                    // Add new product to cart
+                    cart.push(product);
+                }
+                
+                // Save updated cart to localStorage
+                localStorage.setItem('cart', JSON.stringify(cart));
+            }
+            
+            // Function to show cart message
+            function showCartMessage(productName) {
+                // Create message element if it doesn't exist
+                let messageContainer = document.getElementById('cartMessage');
+                
+                if (!messageContainer) {
+                    messageContainer = document.createElement('div');
+                    messageContainer.id = 'cartMessage';
+                    messageContainer.className = 'cart-message';
+                    document.body.appendChild(messageContainer);
+                }
+                
+                // Set message content
+                messageContainer.innerHTML = `
+                    <div class="cart-message-content">
+                        <i class="fas fa-check-circle"></i>
+                        <span>${productName} added to cart!</span>
+                        <a href="cart.html" class="btn btn-sm btn-primary">View Cart</a>
+                    </div>
+                `;
+                
+                // Show message
+                messageContainer.classList.add('show');
+                
+                // Hide message after 3 seconds
+                setTimeout(() => {
+                    messageContainer.classList.remove('show');
+                }, 3000);
+            }
+            
+            // Function to update cart count
+            function updateCartCount() {
+                const cart = JSON.parse(localStorage.getItem('cart')) || [];
+                const cartCount = document.querySelector('.cart-count');
+                
+                if (cartCount) {
+                    const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+                    cartCount.textContent = totalItems;
+                }
+            }
+        });
+                 fetch("https://yourdomain.com/save_order.php", { // 👈 your live PHP URL
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({
+    order_number: orderNumber,
+    customer_name: customerName,
+    customer_email: customerEmail,
+    customer_phone: customerPhone,
+    customer_address: customerAddress,
+    order_date: new Date().toISOString().slice(0, 10),
+    total_amount: totalAmount.toFixed(2),
+    items: cartItems
+  })
+})
+.then(res => res.json())
+.then(data => console.log("Order saved to DB:", data))
+.catch(err => console.error("DB save error:", err));
+
+    </script>
+    
+    <style>
+    /* Cart message styles */
+    .cart-message {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background-color: white;
+        border-radius: var(--radius);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        padding: 1rem;
+        z-index: 1000;
+        transform: translateY(-100px);
+        opacity: 0;
+        transition: all 0.3s ease;
+    }
+
+    .cart-message.show {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    .cart-message-content {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+    }
+
+    .cart-message-content i {
+        color: var(--green-500);
+        font-size: 1.25rem;
+    }
+    </style>
+</body>
+</html>

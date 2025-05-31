@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You - FreedomStyle</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <meta http-equiv="refresh" content="5;url=index.html">
+    <script>
+    (function () {
+      emailjs.init("freedomstylefs12");
+    })();
+  </script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <div class="logo-circle">FS</div>
+                    <span class="logo-text">
+                        <span class="primary-text">Freedom</span>
+                        <span class="secondary-text">Style</span>
+                    </span>
+                </a>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="collections.html">Collections</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-icons">
+                <a href="account.html" class="icon-link">
+                    <i class="fas fa-user"></i>
+                </a>
+                <a href="cart.html" class="icon-link cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </a>
+            </div>
+            <div class="mobile-toggle" id="mobileToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <section class="thank-you-section">
+            <div class="container">
+                <div class="thank-you-card">
+                    <div class="thank-you-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h1>Thank You for Contacting Us!</h1>
+                    <p class="thank-you-message">
+                        Your message has been received. We appreciate you reaching out to us and 
+                        will get back to you as soon as possible. You will be redirected to the home page in 5 seconds.
+                    </p>
+                    <a href="index.html" class="btn btn-primary">Return to Home</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear"></span> FreedomStyle. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Background Elements -->
+    <div class="gradient-blob-1"></div>
+    <div class="gradient-blob-2"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set current year in footer
+            document.getElementById('currentYear').textContent = new Date().getFullYear();
+            
+            // Update cart count
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const cartCount = document.querySelector('.cart-count');
+            
+            if (cartCount) {
+                const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+                cartCount.textContent = totalItems;
+            }
+        });
+    </script>
+
+    <style>
+    .thank-you-section {
+        padding: 6rem 0;
+        min-height: calc(100vh - 200px);
+        display: flex;
+        align-items: center;
+    }
+
+    .thank-you-card {
+        background-color: white;
+        border-radius: var(--radius);
+        padding: 3rem 2rem;
+        text-align: center;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .thank-you-icon {
+        font-size: 4rem;
+        color: var(--green-500);
+        margin-bottom: 1.5rem;
+    }
+
+    .thank-you-card h1 {
+        margin: 0 0 1rem;
+        font-size: 1.75rem;
+        background: linear-gradient(to right, var(--primary-400), var(--primary-600));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .thank-you-message {
+        color: var(--gray-600);
+        margin-bottom: 2rem;
+    }
+    </style>
+</body>
+</html>

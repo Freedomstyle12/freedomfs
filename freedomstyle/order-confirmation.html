@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmation - FreedomStyle</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script>
+    (function () {
+      emailjs.init("freedomstylefs12");
+    })();
+  </script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <div class="logo-circle">FS</div>
+                    <span class="logo-text">
+                        <span class="primary-text">Freedom</span>
+                        <span class="secondary-text">Style</span>
+                    </span>
+                </a>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="collections.html">Collections</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-icons">
+                <a href="account.html" class="icon-link">
+                    <i class="fas fa-user"></i>
+                </a>
+                <a href="cart.html" class="icon-link cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </a>
+            </div>
+            <div class="mobile-toggle" id="mobileToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <section class="order-confirmation">
+            <div class="container">
+                <div class="confirmation-card">
+                    <div class="confirmation-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    
+                    <h1>Thank You for Your Order!</h1>
+                    <div class="order-number" id="orderNumberDisplay">Order #: FS-123456</div>
+                    
+                    <p class="confirmation-message">
+                        We've received your order and have sent a notification to the store owner.
+                        You will receive a confirmation email with the details of your purchase.
+                    </p>
+                    
+                    <div class="order-details">
+                        <h2>Order Summary</h2>
+                        <div class="order-summary">
+                            <div class="summary-row">
+                                <span>Order Date</span>
+                                <span id="orderDateDisplay">April 6, 2025</span>
+                            </div>
+                            <div class="summary-row">
+                                <span>Estimated Delivery</span>
+                                <span id="estimatedDeliveryDisplay">April 13-15, 2025</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="confirmation-actions">
+                        <a href="shop.html" class="btn btn-primary">Continue Shopping</a>
+                        <a href="#" class="btn btn-outline" id="trackOrderBtn">Track Order</a>
+                    </div>
+                    
+                    <div class="contact-info">
+                        <p>Have questions about your order?</p>
+                        <div class="contact-info-links">
+                            <a href="mailto:freedomstylefs12@gmail.com"><i class="fas fa-envelope"></i> freedomstylefs12@gmail.com</a>
+                            <a href="https://wa.me/03378251481"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                            <a href="tel:03378251481"><i class="fas fa-phone"></i> 03378251481</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-newsletter">
+                    <h3>Subscribe to our Newsletter</h3>
+                    <p>Get the latest updates, news and special offers sent directly to your inbox.</p>
+                    <form class="footer-form">
+                        <input type="email" placeholder="Your email address" required>
+                        <button class="btn btn-secondary">Subscribe</button>
+                    </form>
+                </div>
+                
+                <div class="footer-features">
+                    <div class="feature">
+                        <div class="feature-icon"><i class="fas fa-truck"></i></div>
+                        <div class="feature-text">
+                            <h4>Free Shipping</h4>
+                            <p>On orders over $100</p>
+                        </div>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon"><i class="fas fa-credit-card"></i></div>
+                        <div class="feature-text">
+                            <h4>Secure Payments</h4>
+                            <p>Protected & safe</p>
+                        </div>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
+                        <div class="feature-text">
+                            <h4>Money-Back Guarantee</h4>
+                            <p>30-day return policy</p>
+                        </div>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon"><i class="fas fa-phone"></i></div>
+                        <div class="feature-text">
+                            <h4>Customer Support</h4>
+                            <p>24/7 assistance</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-main">
+                <div class="footer-company">
+                    <div class="footer-logo">
+                        <div class="logo-circle light">FS</div>
+                        <span class="logo-text">
+                            <span class="light-text">Freedom</span>
+                            <span class="secondary-text">Style</span>
+                        </span>
+                    </div>
+                    <p>Express yourself with our premium collection of stylish clothing for every occasion.</p>
+                    <div class="company-info">
+                        <p><i class="fas fa-map-marker-alt"></i> 123 FreedomStyle Blvd, New York, NY 10001</p>
+                        <p><i class="fas fa-phone"></i> 03378251481</p>
+                        <p><i class="fab fa-whatsapp"></i> WhatsApp: 03378251481</p>
+                        <p><i class="fas fa-envelope"></i> freedomstylefs12@gmail.com</p>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="link-group">
+                        <h3>Shop</h3>
+                        <ul>
+                            <li><a href="category.html?category=new-arrivals">New Arrivals</a></li>
+                            <li><a href="category.html?category=best-sellers">Best Sellers</a></li>
+                            <li><a href="category.html?category=sale">Sale</a></li>
+                            <li><a href="category.html?category=shirts">Shirts</a></li>
+                            <li><a href="category.html?category=pants">Pants</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-group">
+                        <h3>Information</h3>
+                        <ul>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="blog.html">Blog</a></li>
+                            <li><a href="contact.html">Contact Us</a></li>
+                            <li><a href="#">FAQs</a></li>
+                            <li><a href="#">Shipping & Returns</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-group">
+                        <h3>Account</h3>
+                        <ul>
+                            <li><a href="#">My Account</a></li>
+                            <li><a href="#">Track Order</a></li>
+                            <li><a href="#">Wish List</a></li>
+                            <li><a href="#">Order History</a></li>
+                            <li><a href="cart.html">My Cart</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear"></span> FreedomStyle. All rights reserved.</p>
+                <button id="backToTop" class="back-to-top">
+                    Back to top <i class="fas fa-arrow-up"></i>
+                </button>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Background Elements -->
+    <div class="gradient-blob-1"></div>
+    <div class="gradient-blob-2"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set current year in footer
+            document.getElementById('currentYear').textContent = new Date().getFullYear();
+            
+            // Mobile menu toggle
+            const mobileToggle = document.getElementById('mobileToggle');
+            const navLinks = document.getElementById('navLinks');
+            
+            if (mobileToggle && navLinks) {
+                mobileToggle.addEventListener('click', function() {
+                    navLinks.classList.toggle('active');
+                    
+                    // Change icon based on menu state
+                    const icon = mobileToggle.querySelector('i');
+                    if (navLinks.classList.contains('active')) {
+                        icon.classList.remove('fa-bars');
+                        icon.classList.add('fa-times');
+                    } else {
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    }
+                });
+            }
+            
+            // Back to top functionality
+            const backToTopButton = document.getElementById('backToTop');
+            if (backToTopButton) {
+                backToTopButton.addEventListener('click', function() {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                });
+            }
+            
+            // Navbar scroll effect
+            const navbar = document.querySelector('.navbar');
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            });
+            
+            // Track Order button
+            document.getElementById('trackOrderBtn').addEventListener('click', function(e) {
+                e.preventDefault();
+                alert('Order tracking functionality will be available soon!');
+            });
+            
+            // Update cart count
+            updateCartCount();
+            
+            // Function to update cart count
+            function updateCartCount() {
+                const cart = JSON.parse(localStorage.getItem('cart')) || [];
+                const cartCount = document.querySelector('.cart-count');
+                
+                if (cartCount) {
+                    const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+                    cartCount.textContent = totalItems;
+                }
+            }
+            
+            // Get order information from session storage
+            const orderNumber = sessionStorage.getItem('orderNumber') || 'FS-123456';
+            const orderDate = sessionStorage.getItem('orderDate') || new Date().toLocaleDateString('en-US', { 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric' 
+            });
+            const customerName = sessionStorage.getItem('customerName') || 'Valued Customer';
+            
+            // Calculate estimated delivery (7-9 days from order date)
+            const deliveryDate = new Date(new Date().getTime() + 7 * 24 * 60 * 60 * 1000);
+            const endDeliveryDate = new Date(new Date().getTime() + 9 * 24 * 60 * 60 * 1000);
+            
+            const estimatedDelivery = `${deliveryDate.toLocaleDateString('en-US', { 
+                month: 'long', 
+                day: 'numeric'
+            })} - ${endDeliveryDate.toLocaleDateString('en-US', { 
+                month: 'long', 
+                day: 'numeric', 
+                year: 'numeric'
+            })}`;
+            
+            // Set order details in the page
+            document.getElementById('orderNumberDisplay').textContent = `Order #: ${orderNumber}`;
+            document.getElementById('orderDateDisplay').textContent = orderDate;
+            document.getElementById('estimatedDeliveryDisplay').textContent = estimatedDelivery;
+            
+            // Update the confirmation message to include the customer's name if available
+            if (customerName !== 'Valued Customer') {
+                document.querySelector('.confirmation-message').innerHTML = 
+                    `Thank you, <strong>${customerName}</strong>! We've received your order and have sent a notification to the store owner.
+                    You will receive a confirmation email with the details of your purchase.`;
+            }
+        });
+        fetch("https://yourdomain.com/save_order.php", { // 👈 your live PHP URL
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({
+    order_number: orderNumber,
+    customer_name: customerName,
+    customer_email: customerEmail,
+    customer_phone: customerPhone,
+    customer_address: customerAddress,
+    order_date: new Date().toISOString().slice(0, 10),
+    total_amount: totalAmount.toFixed(2),
+    items: cartItems
+  })
+})
+.then(res => res.json())
+.then(data => console.log("Order saved to DB:", data))
+.catch(err => console.error("DB save error:", err));
+
+    </script>
+
+    <style>
+    /* Order confirmation page styles */
+    .order-confirmation {
+        padding: 4rem 0;
+        min-height: calc(100vh - 300px);
+        display: flex;
+        align-items: center;
+    }
+
+    .confirmation-card {
+        background-color: white;
+        border-radius: var(--radius);
+        padding: 3rem 2rem;
+        text-align: center;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+        max-width: 700px;
+        margin: 0 auto;
+    }
+
+    .confirmation-icon {
+        font-size: 4rem;
+        color: var(--green-500);
+        margin-bottom: 1.5rem;
+    }
+
+    .confirmation-card h1 {
+        margin: 0 0 1rem;
+        font-size: 1.75rem;
+        background: linear-gradient(to right, var(--primary-400), var(--primary-600));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .order-number {
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: var(--gray-800);
+        margin-bottom: 1rem;
+    }
+
+    .confirmation-message {
+        color: var(--gray-600);
+        margin-bottom: 2rem;
+    }
+
+    .order-details {
+        background-color: var(--gray-50);
+        border-radius: var(--radius);
+        padding: 1.5rem;
+        margin-bottom: 2rem;
+        text-align: left;
+    }
+
+    .order-details h2 {
+        margin: 0 0 1rem;
+        font-size: 1.25rem;
+        color: var(--gray-800);
+    }
+
+    .order-summary .summary-row {
+        display: flex;
+        justify-content: space-between;
+        padding: 0.5rem 0;
+        font-size: 0.9375rem;
+    }
+
+    .confirmation-actions {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .contact-info {
+        margin-top: 2rem;
+        padding-top: 2rem;
+        border-top: 1px solid var(--gray-200);
+    }
+
+    .contact-info p {
+        color: var(--gray-600);
+        margin-bottom: 0.75rem;
+    }
+
+    .contact-info-links {
+        display: flex;
+        justify-content: center;
+        gap: 1.5rem;
+        flex-wrap: wrap;
+    }
+
+    .contact-info-links a {
+        color: var(--primary-600);
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .contact-info-links a:hover {
+        color: var(--primary-700);
+        text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+        .confirmation-card {
+            padding: 2rem 1.5rem;
+        }
+        
+        .confirmation-actions {
+            flex-direction: column;
+        }
+        
+        .contact-info-links {
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+    }
+    </style>
+</body>
+</html>
