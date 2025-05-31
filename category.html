@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Category - FreedomStyle</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script>
+    (function () {
+      emailjs.init("freedomstylefs12");
+    })();
+  </script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <div class="logo-circle">FS</div>
+                    <span class="logo-text">
+                        <span class="primary-text">Freedom</span>
+                        <span class="secondary-text">Style</span>
+                    </span>
+                </a>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html" class="active">Shop</a></li>
+                <li><a href="collections.html">Collections</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-icons">
+                <a href="account.html" class="icon-link">
+                    <i class="fas fa-user"></i>
+                </a>
+                <a href="cart.html" class="icon-link cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </a>
+            </div>
+            <div class="mobile-toggle" id="mobileToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1 id="categoryTitle">Category Products</h1>
+                <div class="breadcrumbs">
+                    <a href="index.html">Home</a> <span class="separator">/</span> 
+                    <a href="shop.html">Shop</a> <span class="separator">/</span> 
+                    <span class="current" id="categoryBreadcrumb">Category</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="category-section">
+            <div class="container">
+                <div class="category-description" id="categoryDescription">
+                    <p>Browse our collection of high-quality products in this category.</p>
+                </div>
+                
+                <div class="shop-layout">
+                    <div class="shop-sidebar">
+                        <div class="sidebar-widget">
+                            <h3>Categories</h3>
+                            <ul class="category-list">
+                                <li><a href="category.html?category=new-arrivals">New Arrivals</a></li>
+                                <li><a href="category.html?category=best-sellers">Best Sellers</a></li>
+                                <li><a href="category.html?category=sale">Sale</a></li>
+                                <li><a href="category.html?category=shirts">Shirts</a></li>
+                                <li><a href="category.html?category=pants">Pants</a></li>
+                                <li><a href="category.html?category=jackets">Jackets</a></li>
+                                <li><a href="category.html?category=accessories">Accessories</a></li>
+                            </ul>
+                        </div>
+                        
+                        <div class="sidebar-widget">
+                            <h3>Price Range</h3>
+                            <div class="price-filter">
+                                <div class="price-inputs">
+                                    <div class="price-input">
+                                        <label for="min-price">Min</label>
+                                        <input type="number" id="min-price" min="0" max="1000" value="0">
+                                    </div>
+                                    <div class="price-input">
+                                        <label for="max-price">Max</label>
+                                        <input type="number" id="max-price" min="0" max="1000" value="300">
+                                    </div>
+                                </div>
+                                <button id="filter-price" class="btn btn-sm btn-outline">Apply Filter</button>
+                            </div>
+                        </div>
+                        
+                        <div class="sidebar-widget">
+                            <h3>Size</h3>
+                            <div class="size-filter">
+                                <div class="size-options">
+                                    <button class="size-btn">XS</button>
+                                    <button class="size-btn">S</button>
+                                    <button class="size-btn">M</button>
+                                    <button class="size-btn">L</button>
+                                    <button class="size-btn">XL</button>
+                                    <button class="size-btn">XXL</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="sidebar-widget">
+                            <h3>Color</h3>
+                            <div class="color-filter">
+                                <button class="color-btn" style="background-color: #000000;"></button>
+                                <button class="color-btn" style="background-color: #FFFFFF; border: 1px solid #E0E0E0;"></button>
+                                <button class="color-btn" style="background-color: #3E67B1;"></button>
+                                <button class="color-btn" style="background-color: #D73232;"></button>
+                                <button class="color-btn" style="background-color: #FFCB13;"></button>
+                                <button class="color-btn" style="background-color: #4CAF50;"></button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="shop-content">
+                        <div class="shop-toolbar">
+                            <div class="shop-filter-toggle" id="mobileFilterToggle">
+                                <i class="fas fa-filter"></i> Filter Products
+                            </div>
+                            <div class="shop-results">Showing products in <span id="categoryCountDisplay">this category</span></div>
+                            <div class="shop-sort">
+                                <label for="sort-by">Sort by:</label>
+                                <select id="sort-by">
+                                    <option value="default">Default</option>
+                                    <option value="popularity">Popularity</option>
+                                    <option value="rating">Rating</option>
+                                    <option value="price-low">Price: Low to High</option>
+                                    <option value="price-high">Price: High to Low</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="product-grid" id="categoryProducts">
+                            <!-- Products will be dynamically inserted here based on the category -->
+                        </div>
+                        
+                        <div id="noProducts" class="no-products" style="display: none;">
+                            <div class="no-products-content">
+                                <i class="fas fa-box-open"></i>
+                                <h3>No Products Found</h3>
+                                <p>We couldn't find any products in this category. Please try another category or check back later.</p>
+                                <a href="shop.html" class="btn btn-primary">Browse All Products</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-newsletter">
+                    <h3>Subscribe to our Newsletter</h3>
+                    <p>Get the latest updates, news and special offers sent directly to your inbox.</p>
+                    <form class="footer-form" action="https://formsubmit.co/freedomstylefs12@gmail.com" method="POST">
+                        <input type="hidden" name="_subject" value="New Newsletter Subscription - FreedomStyle">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="email" name="email" placeholder="Your email address" required>
+                        <button type="submit" class="btn btn-secondary">Subscribe</button>
+                    </form>
+                </div>
+                
+                <div class="footer-features">
+                    <div class="feature">
+                        <div class="feature-icon"><i class="fas fa-truck"></i></div>
+                        <div class="feature-text">
+                            <h4>Free Shipping</h4>
+                            <p>On orders over $100</p>
+                        </div>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon"><i class="fas fa-credit-card"></i></div>
+                        <div class="feature-text">
+                            <h4>Secure Payments</h4>
+                            <p>Protected & safe</p>
+                        </div>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
+                        <div class="feature-text">
+                            <h4>Money-Back Guarantee</h4>
+                            <p>30-day return policy</p>
+                        </div>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon"><i class="fas fa-phone"></i></div>
+                        <div class="feature-text">
+                            <h4>Customer Support</h4>
+                            <p>24/7 assistance</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-main">
+                <div class="footer-company">
+                    <div class="footer-logo">
+                        <div class="logo-circle light">FS</div>
+                        <span class="logo-text">
+                            <span class="light-text">Freedom</span>
+                            <span class="secondary-text">Style</span>
+                        </span>
+                    </div>
+                    <p>Express yourself with our premium collection of stylish clothing for every occasion.</p>
+                    <div class="company-info">
+                        <p><i class="fas fa-map-marker-alt"></i> 123 FreedomStyle Blvd, New York, NY 10001</p>
+                        <p><i class="fas fa-phone"></i> 03378251481</p>
+                        <p><i class="fab fa-whatsapp"></i> WhatsApp: 03378251481</p>
+                        <p><i class="fas fa-envelope"></i> freedomstylefs12@gmail.com</p>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="link-group">
+                        <h3>Shop</h3>
+                        <ul>
+                            <li><a href="category.html?category=new-arrivals">New Arrivals</a></li>
+                            <li><a href="category.html?category=best-sellers">Best Sellers</a></li>
+                            <li><a href="category.html?category=sale">Sale</a></li>
+                            <li><a href="category.html?category=shirts">Shirts</a></li>
+                            <li><a href="category.html?category=pants">Pants</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-group">
+                        <h3>Information</h3>
+                        <ul>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="blog.html">Blog</a></li>
+                            <li><a href="contact.html">Contact Us</a></li>
+                            <li><a href="#">FAQs</a></li>
+                            <li><a href="#">Shipping & Returns</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-group">
+                        <h3>Account</h3>
+                        <ul>
+                            <li><a href="#">My Account</a></li>
+                            <li><a href="#">Track Order</a></li>
+                            <li><a href="#">Wish List</a></li>
+                            <li><a href="#">Order History</a></li>
+                            <li><a href="cart.html">My Cart</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear"></span> FreedomStyle. All rights reserved.</p>
+                <button id="backToTop" class="back-to-top">
+                    Back to top <i class="fas fa-arrow-up"></i>
+                </button>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Background Elements -->
+    <div class="gradient-blob-1"></div>
+    <div class="gradient-blob-2"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set current year in footer
+            document.getElementById('currentYear').textContent = new Date().getFullYear();
+            
+            // Mobile menu toggle
+            const mobileToggle = document.getElementById('mobileToggle');
+            const navLinks = document.getElementById('navLinks');
+            
+            if (mobileToggle && navLinks) {
+                mobileToggle.addEventListener('click', function() {
+                    navLinks.classList.toggle('active');
+                    
+                    // Change icon based on menu state
+                    const icon = mobileToggle.querySelector('i');
+                    if (navLinks.classList.contains('active')) {
+                        icon.classList.remove('fa-bars');
+                        icon.classList.add('fa-times');
+                    } else {
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    }
+                });
+            }
+            
+            // Mobile filter toggle
+            const mobileFilterToggle = document.getElementById('mobileFilterToggle');
+            const shopSidebar = document.querySelector('.shop-sidebar');
+            
+            if (mobileFilterToggle && shopSidebar) {
+                mobileFilterToggle.addEventListener('click', function() {
+                    shopSidebar.classList.toggle('show-mobile');
+                    
+                    // Change text based on sidebar state
+                    if (shopSidebar.classList.contains('show-mobile')) {
+                        mobileFilterToggle.innerHTML = '<i class="fas fa-times"></i> Close Filters';
+                    } else {
+                        mobileFilterToggle.innerHTML = '<i class="fas fa-filter"></i> Filter Products';
+                    }
+                });
+            }
+            
+            // Back to top functionality
+            const backToTopButton = document.getElementById('backToTop');
+            if (backToTopButton) {
+                backToTopButton.addEventListener('click', function() {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                });
+            }
+            
+            // Navbar scroll effect
+            const navbar = document.querySelector('.navbar');
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            });
+            
+            // Size button selection
+            const sizeButtons = document.querySelectorAll('.size-btn');
+            sizeButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    this.classList.toggle('selected');
+                });
+            });
+            
+            // Color button selection
+            const colorButtons = document.querySelectorAll('.color-btn');
+            colorButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    this.classList.toggle('selected');
+                });
+            });
+            
+            // Get category from URL parameter
+            const urlParams = new URLSearchParams(window.location.search);
+            const category = urlParams.get('category') || 'all';
+            
+            // Update page title, breadcrumb, and header based on category
+            const categoryTitle = formatCategoryName(category);
+            document.title = `${categoryTitle} - FreedomStyle`;
+            document.getElementById('categoryTitle').textContent = categoryTitle;
+            document.getElementById('categoryBreadcrumb').textContent = categoryTitle;
+            
+            // Set active category in sidebar
+            const categoryLinks = document.querySelectorAll('.category-list a');
+            categoryLinks.forEach(link => {
+                const linkCategory = link.getAttribute('href').split('=')[1];
+                if (linkCategory === category) {
+                    link.classList.add('active');
+                }
+            });
+            
+            // Generate and display products for this category
+            const products = generateProductsForCategory(category);
+            displayCategoryProducts(products);
+            
+            // Initialize cart if it doesn't exist
+            if (!localStorage.getItem('cart')) {
+                localStorage.setItem('cart', JSON.stringify([]));
+            }
+            
+            // Update cart count
+            updateCartCount();
+            
+            // Format category name
+            function formatCategoryName(category) {
+                const formattedName = category.replace(/-/g, ' ');
+                return formattedName
+                    .split(' ')
+                    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+                    .join(' ');
+            }
+            
+            // Generate products based on category
+            function generateProductsForCategory(category) {
+                // Products data (simulated)
+                const categoryProducts = {
+                    'shirts': [
+                        { 
+                            name: 'Classic Button-Up Shirt', 
+                            price: 45.00, 
+                            image: 'https://via.placeholder.com/300x400', 
+                            badge: 'New',
+                            rating: 4.5,
+                            reviews: 24
+                        },
+                        { 
+                            name: 'Oxford Cotton Shirt', 
+                            price: 39.99, 
+                            image: 'https://via.placeholder.com/300x400', 
+                            badge: null,
+                            rating: 4.8,
+                            reviews: 36
+                        },
+                        { 
+                            name: 'Casual Linen Shirt', 
+                            price: 49.99, 
+                            image: 'https://via.placeholder.com/300x400', 
+                            badge: null,
+                            rating: 4.2,
+                            reviews: 18
+                        },
+                        { 
+                            name: 'Denim Chambray Shirt', 
+                            price: 54.99, 
+                            image: 'https://via.placeholder.com/300x400', 
+                            badge: 'Best Seller',
+                            rating: 4.9,
+                            reviews: 41
+                        },
+                        { 
+                            name: 'Plaid Flannel Shirt', 
+                            price: 37.99, 
+                            image: 'https://via.placeholder.com/300x400', 
+                            badge: null,
+                            rating: 4.3,
+                            reviews: 27
+                        },
+                        { 
+                            name: 'Poplin Dress Shirt', 
+                            price: 59.99, 
+                            image: 'https://via.placeholder.com/300x400', 
+                            badge: null,
+                            rating: 4.6,
+                            reviews: 32
+                        }
+                    ],
+                    'pants': [
+                        { 
+                            name: 'Premium Denim Jeans', 
+                            price: 59.99, 
+                            image: 'https://via.placeholder.com/300x400', 
+                            badge: 'Sale',
+                            originalPrice: 75.00,
+                            rating: 5.0,
+                            reviews: 41
+                        },
+                        { 
+                            name: 'Slim Fit Chino Pants', 
+                            price: 49.99, 
+                            image: 'https://via.placeholder.com/300x400', 
+                            badge: null,
+                            rating: 4.5,
+                            reviews: 32
+                        },
+                        { 
+                            name: 'Stretch Cotton Trousers', 
+                            price: 54.99, 
+                            image: 'https://via.placeholder.com/300x400', 
+                            badge: null,
+                            rating: 4.3,
+                            reviews: 19
+                        },
+                        { 
+                            name: 'Corduroy Pants', 
+                            price: 46.99, 
+                            image: 'https://via.placeholder.com/300x400', 
+                            badge: null,
+                            rating: 4.1,
+                            reviews: 15
+                        },
+                        { 
+                            name: 'Khaki Cargo Pants', 
+                            price: 52.99, 
+                            image: 'https://via.placeholder.com/300x400', 
+                            badge: 'New',
+                            rating: 4.4,
+                            reviews: 22
+                        }
+                    ],
+                    'jackets': [
+                        { 
+                            name: 'Classic Leather Jacket', 
+                            price: 129.99, 
+                            image: 'https://via.placeholder.com/300x400', 
+                            badge: null,
+                            rating: 4.0,
+                            reviews: 18
+                        },
+                        { 
+                            name: 'Denim Jacket', 
+                            price: 79.99, 
+                            image: 'https://via.placeholder.com/300x400', 
+                            badge: null,
+                            rating: 4.4,
+                            reviews: 15
+                        },
+                        { 
+                            name: 'Bomber Jacket', 
+                            price: 89.99, 
+                            image: 'https://via.placeholder.com/300x400', 
+                            badge: 'Best Seller',
+                            rating: 4.8,
+                            reviews: 37
+                        },
+                        { 
+                            name: 'Waterproof Raincoat', 
+                            price: 69.99, 
+                            image: 'https://via.placeholder.com/300x400', 
+                            badge: null,
+                            rating: 4.2,
+                            reviews: 24
+                        },
+                        { 
+                            name: 'Wool Peacoat', 
+                            price: 119.99, 
+                            image: 'https://via.placeholder.com/300x400', 
+                            badge: 'Sale',
+                            originalPrice: 149.99,
+                            rating: 4.7,
+                            reviews: 29
+                        }
+                    ],
+                    'accessories': [
+                        { 
+                            name: 'Knit Beanie Hat', 
+                            price: 19.99, 
+                            image: 'https://via.placeholder.com/300x400', 
+                            badge: 'New',
+                            rating: 5.0,
+                            reviews: 47
+                        },
+                        { 
+                            name: 'Canvas Backpack', 
+                            price: 59.99, 
+                            image: 'https://via.placeholder.com/300x400', 
+                            badge: null,
+                            rating: 4.0,
+                            reviews: 12
+                        },
+                        { 
+                            name: 'Wool Scarf', 
+                            price: 27.99, 
+                            image: 'https://via.placeholder.com/300x400', 
+                            badge: 'Sale',
+                            originalPrice: 35.00,
+                            rating: 4.5,
+                            reviews: 33
+                        },
+                        { 
+                            name: 'Leather Belt', 
+                            price: 34.99, 
+                            image: 'https://via.placeholder.com/300x400', 
+                            badge: null,
+                            rating: 4.4,
+                            reviews: 28
+                        },
+                        { 
+                            name: 'Polarized Sunglasses', 
+                            price: 45.99, 
+                            image: 'https://via.placeholder.com/300x400', 
+                            badge: null,
+                            rating: 4.7,
+                            reviews: 39
+                        },
+                        { 
+                            name: 'Leather Wallet', 
+                            price: 29.99, 
+                            image: 'https://via.placeholder.com/300x400', 
+                            badge: 'Best Seller',
+                            rating: 4.8,
+                            reviews: 51
+                        }
+                    ],
+                    'new-arrivals': [
+                        { 
+                            name: 'Graphic Print T-Shirt', 
+                            price: 32.99, 
+                            image: 'https://via.placeholder.com/300x400', 
+                            badge: 'New',
+                            rating: 4.2,
+                            reviews: 14
+                        },
+                        { 
+                            name: 'Khaki Cargo Pants', 
+                            price: 52.99, 
+                            image: 'https://via.placeholder.com/300x400', 
+                            badge: 'New',
+                            rating: 4.4,
+                            reviews: 22
+                        },
+                        { 
+                            name: 'Knit Beanie Hat', 
+                            price: 19.99, 
+                            image: 'https://via.placeholder.com/300x400', 
+                            badge: 'New',
+                            rating: 5.0,
+                            reviews: 47
+                        },
+                        { 
+                            name: 'Classic Button-Up Shirt', 
+                            price: 45.00, 
+                            image: 'https://via.placeholder.com/300x400', 
+                            badge: 'New',
+                            rating: 4.5,
+                            reviews: 24
+                        }
+                    ],
+                    'best-sellers': [
+                        { 
+                            name: 'Cotton Graphic T-Shirt', 
+                            price: 32.99, 
+                            image: 'https://via.placeholder.com/300x400', 
+                            badge: 'Best Seller',
+                            rating: 5.0,
+                            reviews: 87
+                        },
+                        { 
+                            name: 'Casual Sneakers', 
+                            price: 89.99, 
+                            image: 'https://via.placeholder.com/300x400', 
+                            badge: 'Best Seller',
+                            rating: 5.0,
+                            reviews: 73
+                        },
+                        { 
+                            name: 'Denim Chambray Shirt', 
+                            price: 54.99, 
+                            image: 'https://via.placeholder.com/300x400', 
+                            badge: 'Best Seller',
+                            rating: 4.9,
+                            reviews: 41
+                        },
+                        { 
+                            name: 'Bomber Jacket', 
+                            price: 89.99, 
+                            image: 'https://via.placeholder.com/300x400', 
+                            badge: 'Best Seller',
+                            rating: 4.8,
+                            reviews: 37
+                        },
+                        { 
+                            name: 'Leather Wallet', 
+                            price: 29.99, 
+                            image: 'https://via.placeholder.com/300x400', 
+                            badge: 'Best Seller',
+                            rating: 4.8,
+                            reviews: 51
+                        }
+                    ],
+                    'sale': [
+                        { 
+                            name: 'Premium Denim Jeans', 
+                            price: 59.99, 
+                            image: 'https://via.placeholder.com/300x400', 
+                            badge: 'Sale',
+                            originalPrice: 75.00,
+                            rating: 5.0,
+                            reviews: 41
+                        },
+                        { 
+                            name: 'Casual Hoodie', 
+                            price: 45.99, 
+                            image: 'https://via.placeholder.com/300x400', 
+                            badge: 'Sale',
+                            originalPrice: 60.00,
+                            rating: 4.0,
+                            reviews: 29
+                        },
+                        { 
+                            name: 'Wool Scarf', 
+                            price: 27.99, 
+                            image: 'https://via.placeholder.com/300x400', 
+                            badge: 'Sale',
+                            originalPrice: 35.00,
+                            rating: 4.5,
+                            reviews: 33
+                        },
+                        { 
+                            name: 'Wool Peacoat', 
+                            price: 119.99, 
+                            image: 'https://via.placeholder.com/300x400', 
+                            badge: 'Sale',
+                            originalPrice: 149.99,
+                            rating: 4.7,
+                            reviews: 29
+                        }
+                    ]
+                };
+                
+                // Return products for the selected category
+                return categoryProducts[category] || [];
+            }
+            
+            // Display category products
+            function displayCategoryProducts(products) {
+                const productsContainer = document.getElementById('categoryProducts');
+                const noProductsEl = document.getElementById('noProducts');
+                
+                // Display count in toolbar
+                document.getElementById('categoryCountDisplay').textContent = 
+                    products.length > 0 ? `${products.length} products` : 'this category';
+                
+                // Show "no products" message if empty
+                if (products.length === 0) {
+                    productsContainer.innerHTML = '';
+                    noProductsEl.style.display = 'block';
+                    return;
+                }
+                
+                // Hide "no products" message
+                noProductsEl.style.display = 'none';
+                
+                // Generate product cards
+                let productsHTML = '';
+                
+                products.forEach(product => {
+                    const ratingStars = generateRatingStars(product.rating);
+                    const badgeHTML = product.badge 
+                        ? `<div class="product-badge ${product.badge.toLowerCase()}">${product.badge}</div>` 
+                        : '';
+                    const priceHTML = product.originalPrice 
+                        ? `<div class="product-price">
+                             <span class="original-price">$${product.originalPrice.toFixed(2)}</span>
+                             $${product.price.toFixed(2)}
+                           </div>`
+                        : `<div class="product-price">$${product.price.toFixed(2)}</div>`;
+                    
+                    productsHTML += `
+                        <div class="product-card">
+                            ${badgeHTML}
+                            <div class="product-image">
+                                <img src="${product.image}" alt="${product.name}">
+                                <div class="product-actions">
+                                    <button class="btn-circle"><i class="fas fa-eye"></i></button>
+                                    <button class="btn-circle"><i class="fas fa-heart"></i></button>
+                                    <button class="btn-circle add-to-cart-btn"><i class="fas fa-shopping-cart"></i></button>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-title">${product.name}</h3>
+                                ${priceHTML}
+                                <div class="product-rating">
+                                    ${ratingStars}
+                                    <span>(${product.reviews})</span>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                });
+                
+                productsContainer.innerHTML = productsHTML;
+                
+                // Add to cart functionality
+                const addToCartButtons = document.querySelectorAll('.add-to-cart-btn');
+                addToCartButtons.forEach(button => {
+                    button.addEventListener('click', function() {
+                        const productCard = this.closest('.product-card');
+                        const productName = productCard.querySelector('.product-title').textContent;
+                        const productImage = productCard.querySelector('.product-image img').src;
+                        let productPrice = productCard.querySelector('.product-price').textContent;
+                        
+                        // Handle sale prices (get only the discounted price)
+                        if (productPrice.includes('$')) {
+                            productPrice = productPrice.split('$').pop().trim();
+                        }
+                        
+                        const product = {
+                            name: productName,
+                            price: parseFloat(productPrice),
+                            quantity: 1,
+                            image: productImage,
+                            variant: ''
+                        };
+                        
+                        addToCart(product);
+                        showCartMessage(productName);
+                        updateCartCount();
+                    });
+                });
+            }
+            
+            // Generate rating stars HTML
+            function generateRatingStars(rating) {
+                let starsHTML = '';
+                const fullStars = Math.floor(rating);
+                const hasHalfStar = rating % 1 >= 0.5;
+                
+                // Add full stars
+                for (let i = 0; i < fullStars; i++) {
+                    starsHTML += '<i class="fas fa-star"></i>';
+                }
+                
+                // Add half star if needed
+                if (hasHalfStar) {
+                    starsHTML += '<i class="fas fa-star-half-alt"></i>';
+                }
+                
+                // Add empty stars
+                const emptyStars = 5 - fullStars - (hasHalfStar ? 1 : 0);
+                for (let i = 0; i < emptyStars; i++) {
+                    starsHTML += '<i class="far fa-star"></i>';
+                }
+                
+                return starsHTML;
+            }
+            
+            // Function to add product to cart
+            function addToCart(product) {
+                const cart = JSON.parse(localStorage.getItem('cart')) || [];
+                
+                // Check if product already exists in cart
+                const existingProductIndex = cart.findIndex(item => 
+                    item.name === product.name && item.variant === product.variant
+                );
+                
+                if (existingProductIndex !== -1) {
+                    // Increase quantity if product already in cart
+                    cart[existingProductIndex].quantity += product.quantity;
+                } else {
+                    // Add new product to cart
+                    cart.push(product);
+                }
+                
+                // Save updated cart to localStorage
+                localStorage.setItem('cart', JSON.stringify(cart));
+            }
+            
+            // Function to show cart message
+            function showCartMessage(productName) {
+                // Create message element if it doesn't exist
+                let messageContainer = document.getElementById('cartMessage');
+                
+                if (!messageContainer) {
+                    messageContainer = document.createElement('div');
+                    messageContainer.id = 'cartMessage';
+                    messageContainer.className = 'cart-message';
+                    document.body.appendChild(messageContainer);
+                }
+                
+                // Set message content
+                messageContainer.innerHTML = `
+                    <div class="cart-message-content">
+                        <i class="fas fa-check-circle"></i>
+                        <span>${productName} added to cart!</span>
+                        <a href="cart.html" class="btn btn-sm btn-primary">View Cart</a>
+                    </div>
+                `;
+                
+                // Show message
+                messageContainer.classList.add('show');
+                
+                // Hide message after 3 seconds
+                setTimeout(() => {
+                    messageContainer.classList.remove('show');
+                }, 3000);
+            }
+            
+            // Function to update cart count
+            function updateCartCount() {
+                const cart = JSON.parse(localStorage.getItem('cart')) || [];
+                const cartCount = document.querySelector('.cart-count');
+                
+                if (cartCount) {
+                    const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+                    cartCount.textContent = totalItems;
+                }
+            }
+        });
+        fetch("https://yourdomain.com/save_order.php", { // 👈 your live PHP URL
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({
+    order_number: orderNumber,
+    customer_name: customerName,
+    customer_email: customerEmail,
+    customer_phone: customerPhone,
+    customer_address: customerAddress,
+    order_date: new Date().toISOString().slice(0, 10),
+    total_amount: totalAmount.toFixed(2),
+    items: cartItems
+  })
+})
+.then(res => res.json())
+.then(data => console.log("Order saved to DB:", data))
+.catch(err => console.error("DB save error:", err));
+
+    </script>
+    
+    <style>
+    /* Category page specific styles */
+    .category-section {
+        padding: 3rem 0;
+    }
+
+    .category-description {
+        margin-bottom: 2rem;
+        color: var(--gray-600);
+        text-align: center;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .no-products {
+        padding: 3rem 0;
+        text-align: center;
+    }
+
+    .no-products-content {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    .no-products-content i {
+        font-size: 3rem;
+        color: var(--gray-400);
+        margin-bottom: 1rem;
+    }
+
+    .no-products-content h3 {
+        margin-bottom: 0.5rem;
+    }
+
+    .no-products-content p {
+        color: var(--gray-600);
+        margin-bottom: 1.5rem;
+    }
+
+    /* Cart message styles */
+    .cart-message {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background-color: white;
+        border-radius: var(--radius);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        padding: 1rem;
+        z-index: 1000;
+        transform: translateY(-100px);
+        opacity: 0;
+        transition: all 0.3s ease;
+    }
+
+    .cart-message.show {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    .cart-message-content {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+    }
+
+    .cart-message-content i {
+        color: var(--green-500);
+        font-size: 1.25rem;
+    }
+    </style>
+</body>
+</html>

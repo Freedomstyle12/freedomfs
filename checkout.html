@@ -1,0 +1,182 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FreedomStyle - Checkout</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script>
+    (function () {
+      emailjs.init("freedomstylefs12");
+    })();
+  </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .checkout-container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 10px;
+        }
+        h2 {
+            text-align: center;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-top: 15px;
+            font-weight: bold;
+        }
+        input, textarea {
+            padding: 10px;
+            margin-top: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            margin-top: 20px;
+            padding: 12px;
+            background-color: seagreen;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #2e8b57;
+        }
+    </style>
+</head>
+<body>
+    <div class="checkout-container">
+        <h2>Checkout</h2>
+        <form action="send_order.php" method="POST">
+            <label for="name">Customer Name:</label>
+            <input type="text" id="name" name="name" required />
+
+            <label for="address">Address:</label>
+            <textarea id="address" name="address" rows="3" required></textarea>
+
+            <label for="item">Item Name:</label>
+            <input type="text" id="item" name="item" required />
+
+            <button type="submit">Place Order</button>
+        </form>
+    </div>
+</body>
+</html>
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+  (function() {
+    emailjs.init("freedomstylefs12");
+  })();
+
+  function sendOrderEmail() {
+    emailjs.send("freedomfs", "template_ehk1tip", {
+      customer_name: document.getElementById("name").value,
+      customer_address: document.getElementById("address").value,
+      item_name: document.getElementById("item").value
+    }).then(function(response) {
+      alert("Order email sent successfully!");
+    }, function(error) {
+      alert("Failed to send email: " + error.text);
+    });
+  }
+  document.getElementById("checkoutForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const customerName = document.getElementById("customerName").value;
+      const customerEmail = document.getElementById("customerEmail").value;
+      const customerPhone = document.getElementById("customerPhone").value;
+      const customerAddress = document.getElementById("customerAddress").value;
+
+      const timestamp = new Date().getTime();
+      const randomDigits = Math.floor(Math.random() * 10000).toString().padStart(4, "0");
+      const orderNumber = `FS-${timestamp.toString().slice(-6)}${randomDigits}`;
+      const orderDate = new Date().toLocaleDateString("en-US", {
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+      });
+
+      let cartItems = JSON.parse(localStorage.getItem("cart")) || [];
+      let orderDetails = "";
+      let totalAmount = 0;
+
+      cartItems.forEach((item) => {
+        const itemTotal = (item.price * item.quantity).toFixed(2);
+        totalAmount += parseFloat(itemTotal);
+        orderDetails += `${item.name} (Qty: ${item.quantity}) - $${itemTotal}\n`;
+      });
+
+      emailjs.send("freedomfs", "template_ehk1tlp", {
+        customer_name: customerName,
+        customer_email: customerEmail,
+        customer_phone: customerPhone,
+        customer_address: customerAddress,
+        order_number: orderNumber,
+        order_date: orderDate,
+        order_details: orderDetails,
+        total_amount: `$${totalAmount.toFixed(2)}`,
+      }).then(
+        function (response) {
+          console.log("Email sent successfully!", response);
+        },
+        function (error) {
+          console.error("Failed to send email:", error);
+        }
+      );
+
+      const whatsappMessage =
+        `New Order #${orderNumber} from ${customerName}!\n\n` +
+        `Total: $${totalAmount.toFixed(2)}\n` +
+        `Phone: ${customerPhone}\n` +
+        `View your email for complete details.`;
+
+      window.open(
+        `https://wa.me/03378251481?text=${encodeURIComponent(whatsappMessage)}`,
+        "_blank"
+      );
+
+      localStorage.setItem("cart", JSON.stringify([]));
+      alert("Thank you for your order! You'll be redirected to the confirmation page.");
+      setTimeout(() => {
+        window.location.href = "order-confirmation.html";
+      }, 5000);
+    });
+        fetch("https://yourdomain.com/save_order.php", { // 👈 your live PHP URL
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({
+    order_number: orderNumber,
+    customer_name: customerName,
+    customer_email: customerEmail,
+    customer_phone: customerPhone,
+    customer_address: customerAddress,
+    order_date: new Date().toISOString().slice(0, 10),
+    total_amount: totalAmount.toFixed(2),
+    items: cartItems
+  })
+})
+.then(res => res.json())
+.then(data => console.log("Order saved to DB:", data))
+.catch(err => console.error("DB save error:", err));
+
+</script>
+
+<form onsubmit="sendOrderEmail(); return false;">
+  <input type="text" id="name" placeholder="Customer Name" required>
+  <input type="text" id="address" placeholder="Address" required>
+  <input type="text" id="item" placeholder="Item" required>
+  <button type="submit">Place Order</button>
+</form>

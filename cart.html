@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shopping Cart - FreedomStyle</title>
+  <link rel="stylesheet" href="styless.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script>
+    (function () {
+      emailjs.init("freedomstylefs12");
+    })();
+  </script>
+</head>
+<body>
+  <!-- Add your header/navbar here if not included globally -->
+
+  <main class="cart-section">
+    <div class="container">
+      <h1>Your Shopping Cart</h1>
+      <div id="cartItemsContainer"></div>
+      <div class="cart-summary">
+        <p>Total: <span id="cartTotal">$0.00</span></p>
+        <button id="checkoutButton" class="btn btn-primary">Proceed to Checkout</button>
+      </div>
+    </div>
+  </main>
+
+  <!-- Checkout Modal -->
+  <div class="modal" id="checkoutModal">
+    <div class="modal-content">
+      <span class="close-modal">&times;</span>
+      <h2>Complete Your Order</h2>
+      <form id="checkoutForm">
+        <div class="form-group">
+          <label for="customerName">Full Name</label>
+          <input type="text" id="customerName" required />
+        </div>
+        <div class="form-group">
+          <label for="customerEmail">Email Address</label>
+          <input type="email" id="customerEmail" required />
+        </div>
+        <div class="form-group">
+          <label for="customerPhone">Phone Number</label>
+          <input type="tel" id="customerPhone" required />
+        </div>
+        <div class="form-group">
+          <label for="customerAddress">Shipping Address</label>
+          <textarea id="customerAddress" rows="3" required></textarea>
+        </div>
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary">Place Order</button>
+          <button type="button" class="btn btn-outline" id="cancelOrder">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+ <script>
+document.addEventListener("DOMContentLoaded", () => {
+  const cartContainer = document.getElementById("cartItemsContainer");
+  const cartTotal = document.getElementById("cartTotal");
+  const checkoutButton = document.getElementById("checkoutButton");
+  const checkoutModal = document.getElementById("checkoutModal");
+  const closeModal = document.querySelector(".close-modal");
+  const cancelButton = document.getElementById("cancelOrder");
+  const checkoutForm = document.getElementById("checkoutForm");
+
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+  function updateCartDisplay() {
+    cartContainer.innerHTML = "";
+    let total = 0;
+
+    if (cart.length === 0) {
+      cartContainer.innerHTML = "<p>Your cart is empty.</p>";
+      cartTotal.textContent = "$0.00";
+      return;
+    }
+
+    cart.forEach((item, index) => {
+      const itemTotal = (item.price * item.quantity).toFixed(2);
+      total += parseFloat(itemTotal);
+
+      const div = document.createElement("div");
+      div.className = "cart-item";
+      div.innerHTML = `
+        <div><strong>${item.name}</strong></div>
+        <div>Qty: ${item.quantity}</div>
+        <div>$${itemTotal}</div>
+      `;
+      cartContainer.appendChild(div);
+    });
+
+    cartTotal.textContent = `$${total.toFixed(2)}`;
+  }
+
+  updateCartDisplay();
+
+  // Modal controls
+  checkoutButton.addEventListener("click", () => {
+    checkoutModal.style.display = "flex";
+  });
+
+  closeModal.addEventListener("click", () => {
+    checkoutModal.style.display = "none";
+  });
+
+  cancelButton.addEventListener("click", () => {
+    checkoutModal.style.display = "none";
+  });
+
+  window.addEventListener("click", (e) => {
+    if (e.target === checkoutModal) {
+      checkoutModal.style.display = "none";
+    }
+  });
+
+  // Handle order submission
+  checkoutForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const name = document.getElementById("customerName").value;
+    const email = document.getElementById("customerEmail").value;
+    const phone = document.getElementById("customerPhone").value;
+    const address = document.getElementById("customerAddress").value;
+
+    const timestamp = Date.now();
+    const randomDigits = Math.floor(Math.random() * 10000).toString().padStart(4, "0");
+    const orderNumber = `FS-${timestamp.toString().slice(-6)}${randomDigits}`;
+    const orderDate = new Date().toISOString().split("T")[0];
+
+    let orderDetails = "";
+    let totalAmount = 0;
+
+    cart.forEach((item) => {
+      const itemTotal = (item.price * item.quantity).toFixed(2);
+      totalAmount += parseFloat(itemTotal);
+      orderDetails += `${item.name} (Qty: ${item.quantity}) - $${itemTotal}\n`;
+    });
+
+    // EmailJS
+    emailjs.send("freedomfs", "template_ehk1tlp", {
+      customer_name: name,
+      customer_email: email,
+      customer_phone: phone,
+      customer_address: address,
+      order_number: orderNumber,
+      order_date: orderDate,
+      order_details: orderDetails,
+      total_amount: `$${totalAmount.toFixed(2)}`
+    }).then(() => {
+      console.log("Email sent.");
+    }).catch((err) => {
+      console.error("Email error:", err);
+    });
+
+    // Save to PHP
+    fetch("http://localhost/save_order.php", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({
+    order_number: orderNumber,
+    customer_name: name,
+    customer_email: email,
+    customer_phone: phone,
+    customer_address: address,
+    order_date: orderDate,
+    total_amount: totalAmount.toFixed(2),
+    items: cart
+  })
+})
+.then(res => res.json())
+.then(data => {
+  console.log("Saved to DB:", data);
+})
+.catch(err => {
+  console.error("DB error:", err);
+});
+
+
+    // WhatsApp
+    const msg = `New Order #${orderNumber} from ${name}!\nTotal: $${totalAmount.toFixed(2)}\nPhone: ${phone}`;
+    window.open(`https://wa.me/03378251481?text=${encodeURIComponent(msg)}`, "_blank");
+
+    // Clear cart
+    localStorage.removeItem("cart");
+    cart = [];
+    updateCartDisplay();
+
+    alert("Thank you for your order!");
+    setTimeout(() => {
+      window.location.href = "order-confirmation.html";
+    }, 3000);
+  });
+});
+</script>
+
+</body>
+</html>
+
+

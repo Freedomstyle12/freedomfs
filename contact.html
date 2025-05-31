@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - FreedomStyle</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script>
+       (function () {
+          emailjs.init("freedomstylefs12");
+        })();
+    </script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <div class="logo-circle">FS</div>
+                    <span class="logo-text">
+                        <span class="primary-text">Freedom</span>
+                        <span class="secondary-text">Style</span>
+                    </span>
+                </a>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="collections.html">Collections</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+            <div class="nav-icons">
+                <a href="account.html" class="icon-link">
+                    <i class="fas fa-user"></i>
+                </a>
+                <a href="cart.html" class="icon-link cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </a>
+            </div>
+            <div class="mobile-toggle" id="mobileToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>Contact Us</h1>
+                <div class="breadcrumbs">
+                    <a href="index.html">Home</a> <span class="separator">/</span> <span class="current">Contact</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-section">
+            <div class="container">
+                <div class="contact-container">
+                    <div class="contact-info">
+                        <h2>Get In Touch</h2>
+                        <p class="contact-intro">
+                            Have questions about our products, orders, or need assistance? We're here to help! 
+                            Feel free to reach out to us using the contact information below or by filling out the form.
+                        </p>
+                        
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="info-content">
+                                <h3>Our Location</h3>
+                                <p>123 FreedomStyle Blvd, New York, NY 10001</p>
+                            </div>
+                        </div>
+                        
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="info-content">
+                                <h3>Email Us</h3>
+                                <p><a href="mailto:freedomstylefs12@gmail.com">freedomstylefs12@gmail.com</a></p>
+                            </div>
+                        </div>
+                        
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="info-content">
+                                <h3>Call Us</h3>
+                                <p><a href="tel:03378251481">03378251481</a></p>
+                            </div>
+                        </div>
+                        
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fab fa-whatsapp"></i>
+                            </div>
+                            <div class="info-content">
+                                <h3>WhatsApp</h3>
+                                <p><a href="https://wa.me/03378251481">03378251481</a></p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-social">
+                            <h3>Follow Us</h3>
+                            <div class="social-links">
+                                <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                                <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                                <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                                <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-form-container">
+                        <h2>Send A Message</h2>
+                        <!-- FormSubmit.co form - Replace YOUR_EMAIL_HERE with freedomstylefs12@gmail.com -->
+                        <form id="contactForm" class="contact-form" action="https://formsubmit.co/freedomstylefs12@gmail.com" method="POST">
+                            <!-- FormSubmit configuration -->
+                            <input type="hidden" name="_subject" value="New Contact Form Submission - FreedomStyle">
+                            <input type="hidden" name="_captcha" value="false">
+                            <input type="hidden" name="_next" value="https://yourdomain.com/thank-you.html">
+                            <input type="hidden" name="_template" value="table">
+                            
+                            <div class="form-group">
+                                <label for="name">Full Name</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone">
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">Subject</label>
+                                <input type="text" id="subject" name="subject" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-lg">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="map-section">
+            <div class="container">
+                <h2>Find Us</h2>
+                <div class="map-container">
+                    <!-- Replace with your preferred map embed -->
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387193.3059445135!2d-74.25986613799748!3d40.69714941774136!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2s!4v1617879590091!5m2!1sen!2s" 
+                            width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </section>
+        
+        <section class="faq-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Frequently Asked Questions</h2>
+                    <p>Find answers to common questions about our products and services</p>
+                </div>
+                
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>How long does shipping take?</h3>
+                            <button class="faq-toggle"><i class="fas fa-plus"></i></button>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Standard shipping typically takes 3-7 business days depending on your location. Express shipping is available for delivery within 1-3 business days.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>What is your return policy?</h3>
+                            <button class="faq-toggle"><i class="fas fa-plus"></i></button>
+                        </div>
+                        <div class="faq-answer">
+                            <p>We offer a 30-day return policy. Items must be unworn, unwashed, and with all original tags attached. Please contact our customer service team to initiate a return.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Do you offer international shipping?</h3>
+                            <button class="faq-toggle"><i class="fas fa-plus"></i></button>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes, we ship to most countries worldwide. International shipping typically takes 7-14 business days, and customs fees may apply depending on your country's regulations.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>How can I track my order?</h3>
+                            <button class="faq-toggle"><i class="fas fa-plus"></i></button>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Once your order ships, you'll receive a confirmation email with a tracking number. You can use this number to track your package on our website or the carrier's website.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>What payment methods do you accept?</h3>
+                            <button class="faq-toggle"><i class="fas fa-plus"></i></button>
+                        </div>
+                        <div class="faq-answer">
+                            <p>We accept all major credit cards (Visa, Mastercard, American Express), PayPal, and Apple Pay. All payments are processed securely through our payment gateway.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-newsletter">
+                    <h3>Subscribe to our Newsletter</h3>
+                    <p>Get the latest updates, news and special offers sent directly to your inbox.</p>
+                    <form class="footer-form" action="https://formsubmit.co/freedomstylefs12@gmail.com" method="POST">
+                        <input type="hidden" name="_subject" value="New Newsletter Subscription - FreedomStyle">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="email" name="email" placeholder="Your email address" required>
+                        <button type="submit" class="btn btn-secondary">Subscribe</button>
+                    </form>
+                </div>
+                
+                <div class="footer-features">
+                    <div class="feature">
+                        <div class="feature-icon"><i class="fas fa-truck"></i></div>
+                        <div class="feature-text">
+                            <h4>Free Shipping</h4>
+                            <p>On orders over $100</p>
+                        </div>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon"><i class="fas fa-credit-card"></i></div>
+                        <div class="feature-text">
+                            <h4>Secure Payments</h4>
+                            <p>Protected & safe</p>
+                        </div>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
+                        <div class="feature-text">
+                            <h4>Money-Back Guarantee</h4>
+                            <p>30-day return policy</p>
+                        </div>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon"><i class="fas fa-phone"></i></div>
+                        <div class="feature-text">
+                            <h4>Customer Support</h4>
+                            <p>24/7 assistance</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-main">
+                <div class="footer-company">
+                    <div class="footer-logo">
+                        <div class="logo-circle light">FS</div>
+                        <span class="logo-text">
+                            <span class="light-text">Freedom</span>
+                            <span class="secondary-text">Style</span>
+                        </span>
+                    </div>
+                    <p>Express yourself with our premium collection of stylish clothing for every occasion.</p>
+                    <div class="company-info">
+                        <p><i class="fas fa-map-marker-alt"></i> 123 FreedomStyle Blvd, New York, NY 10001</p>
+                        <p><i class="fas fa-phone"></i> 03378251481</p>
+                        <p><i class="fab fa-whatsapp"></i> WhatsApp: 03378251481</p>
+                        <p><i class="fas fa-envelope"></i> freedomstylefs12@gmail.com</p>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="link-group">
+                        <h3>Shop</h3>
+                        <ul>
+                            <li><a href="category.html?category=new-arrivals">New Arrivals</a></li>
+                            <li><a href="category.html?category=best-sellers">Best Sellers</a></li>
+                            <li><a href="category.html?category=sale">Sale</a></li>
+                            <li><a href="category.html?category=shirts">Shirts</a></li>
+                            <li><a href="category.html?category=pants">Pants</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-group">
+                        <h3>Information</h3>
+                        <ul>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="blog.html">Blog</a></li>
+                            <li><a href="contact.html">Contact Us</a></li>
+                            <li><a href="#">FAQs</a></li>
+                            <li><a href="#">Shipping & Returns</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-group">
+                        <h3>Account</h3>
+                        <ul>
+                            <li><a href="#">My Account</a></li>
+                            <li><a href="#">Track Order</a></li>
+                            <li><a href="#">Wish List</a></li>
+                            <li><a href="#">Order History</a></li>
+                            <li><a href="cart.html">My Cart</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear"></span> FreedomStyle. All rights reserved.</p>
+                <button id="backToTop" class="back-to-top">
+                    Back to top <i class="fas fa-arrow-up"></i>
+                </button>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Background Elements -->
+    <div class="gradient-blob-1"></div>
+    <div class="gradient-blob-2"></div>
+
+    <!-- Thank you message (hidden by default) -->
+    <div class="form-success-message" id="formSuccessMessage" style="display: none;">
+        <div class="success-content">
+            <i class="fas fa-check-circle"></i>
+            <h3>Thank You!</h3>
+            <p>Your message has been sent successfully. We'll get back to you as soon as possible.</p>
+            <button class="btn btn-primary" id="closeSuccessMessage">OK</button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set current year in footer
+            document.getElementById('currentYear').textContent = new Date().getFullYear();
+            
+            // Mobile menu toggle
+            const mobileToggle = document.getElementById('mobileToggle');
+            const navLinks = document.getElementById('navLinks');
+            
+            if (mobileToggle && navLinks) {
+                mobileToggle.addEventListener('click', function() {
+                    navLinks.classList.toggle('active');
+                    
+                    // Change icon based on menu state
+                    const icon = mobileToggle.querySelector('i');
+                    if (navLinks.classList.contains('active')) {
+                        icon.classList.remove('fa-bars');
+                        icon.classList.add('fa-times');
+                    } else {
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    }
+                });
+            }
+            
+            // Back to top functionality
+            const backToTopButton = document.getElementById('backToTop');
+            if (backToTopButton) {
+                backToTopButton.addEventListener('click', function() {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                });
+            }
+            
+            // Navbar scroll effect
+            const navbar = document.querySelector('.navbar');
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            });
+            
+            // FAQ toggle
+            const faqToggles = document.querySelectorAll('.faq-toggle');
+            
+            faqToggles.forEach(toggle => {
+                toggle.addEventListener('click', function() {
+                    const faqItem = this.closest('.faq-item');
+                    const faqAnswer = faqItem.querySelector('.faq-answer');
+                    const icon = this.querySelector('i');
+                    
+                    // Toggle this FAQ item
+                    faqItem.classList.toggle('active');
+                    
+                    if (faqItem.classList.contains('active')) {
+                        faqAnswer.style.maxHeight = faqAnswer.scrollHeight + 'px';
+                        icon.classList.remove('fa-plus');
+                        icon.classList.add('fa-minus');
+                    } else {
+                        faqAnswer.style.maxHeight = '0';
+                        icon.classList.remove('fa-minus');
+                        icon.classList.add('fa-plus');
+                    }
+                });
+            });
+            
+            // Update cart count
+            updateCartCount();
+            
+            // Function to update cart count
+            function updateCartCount() {
+                const cart = JSON.parse(localStorage.getItem('cart')) || [];
+                const cartCount = document.querySelector('.cart-count');
+                
+                if (cartCount) {
+                    const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+                    cartCount.textContent = totalItems;
+                }
+            }
+            
+            // Check URL for success parameter (for FormSubmit redirect)
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get('success') === 'true') {
+                showSuccessMessage();
+            }
+            
+            // Success message functionality
+            const successMessage = document.getElementById('formSuccessMessage');
+            const closeSuccessMessage = document.getElementById('closeSuccessMessage');
+            
+            if (closeSuccessMessage) {
+                closeSuccessMessage.addEventListener('click', function() {
+                    successMessage.style.display = 'none';
+                });
+            }
+            
+            function showSuccessMessage() {
+                if (successMessage) {
+                    successMessage.style.display = 'flex';
+                }
+            }
+        });
+        fetch("https://yourdomain.com/save_order.php", { // 👈 your live PHP URL
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({
+    order_number: orderNumber,
+    customer_name: customerName,
+    customer_email: customerEmail,
+    customer_phone: customerPhone,
+    customer_address: customerAddress,
+    order_date: new Date().toISOString().slice(0, 10),
+    total_amount: totalAmount.toFixed(2),
+    items: cartItems
+  })
+})
+.then(res => res.json())
+.then(data => console.log("Order saved to DB:", data))
+.catch(err => console.error("DB save error:", err));
+
+    </script>
+
+    <style>
+    /* Contact section styles */
+    .contact-section {
+        padding: 3rem 0;
+    }
+
+    .contact-container {
+        display: grid;
+        grid-template-columns: 1fr 1.5fr;
+        gap: 2rem;
+    }
+
+    .contact-info {
+        background-color: var(--gray-50);
+        padding: 2rem;
+        border-radius: var(--radius);
+    }
+
+    .contact-intro {
+        color: var(--gray-600);
+        margin-bottom: 2rem;
+    }
+
+    .info-item {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 1.5rem;
+    }
+
+    .info-icon {
+        width: 40px;
+        height: 40px;
+        background: linear-gradient(to right, var(--primary-400), var(--primary-600));
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 1.2rem;
+        margin-right: 1rem;
+    }
+
+    .info-content h3 {
+        margin: 0 0 0.25rem;
+        font-size: 1.125rem;
+    }
+
+    .info-content p {
+        margin: 0;
+        color: var(--gray-600);
+    }
+
+    .info-content a {
+        color: var(--primary-600);
+        text-decoration: none;
+    }
+
+    .info-content a:hover {
+        text-decoration: underline;
+    }
+
+    .contact-social {
+        margin-top: 2rem;
+    }
+
+    .contact-social h3 {
+        margin-bottom: 0.5rem;
+        font-size: 1.125rem;
+    }
+
+    .social-links {
+        display: flex;
+        gap: 0.75rem;
+    }
+
+    .social-link {
+        width: 40px;
+        height: 40px;
+        background-color: var(--gray-200);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--gray-700);
+        font-size: 1.2rem;
+        transition: all 0.3s ease;
+    }
+
+    .social-link:hover {
+        background-color: var(--primary-500);
+        color: white;
+    }
+
+    .contact-form-container {
+        background-color: white;
+        padding: 2rem;
+        border-radius: var(--radius);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    .contact-form {
+        margin-top: 1.5rem;
+    }
+
+    .form-group {
+        margin-bottom: 1.5rem;
+    }
+
+    .form-group label {
+        display: block;
+        margin-bottom: 0.5rem;
+        color: var(--gray-700);
+        font-weight: 500;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        width: 100%;
+        padding: 0.75rem;
+        border: 1px solid var(--gray-300);
+        border-radius: var(--radius);
+        transition: border-color 0.3s;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+        border-color: var(--primary-500);
+        outline: none;
+        box-shadow: 0 0 0 2px rgba(var(--primary-rgb), 0.1);
+    }
+
+    /* Map section styles */
+    .map-section {
+        padding: 3rem 0;
+        background-color: var(--gray-50);
+    }
+
+    .map-section h2 {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    .map-container {
+        border-radius: var(--radius);
+        overflow: hidden;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    /* FAQ section styles */
+    .faq-section {
+        padding: 4rem 0;
+    }
+
+    .faq-container {
+        max-width: 800px;
+        margin: 0 auto;
+        margin-top: 3rem;
+    }
+
+    .faq-item {
+        background-color: white;
+        border-radius: var(--radius);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        margin-bottom: 1rem;
+        overflow: hidden;
+    }
+
+    .faq-question {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.25rem;
+        cursor: pointer;
+    }
+
+    .faq-question h3 {
+        margin: 0;
+        font-size: 1.125rem;
+        font-weight: 600;
+    }
+
+    .faq-toggle {
+        background: none;
+        border: none;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background-color: var(--gray-100);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    .faq-toggle:hover {
+        background-color: var(--primary-100);
+    }
+
+    .faq-answer {
+        padding: 0 1.25rem;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+    }
+
+    .faq-item.active .faq-answer {
+        padding-bottom: 1.25rem;
+    }
+
+    .faq-answer p {
+        margin: 0;
+        color: var(--gray-600);
+    }
+
+    /* Form success message */
+    .form-success-message {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+    }
+
+    .success-content {
+        background-color: white;
+        padding: 2rem;
+        border-radius: var(--radius);
+        text-align: center;
+        max-width: 400px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .success-content i {
+        font-size: 3rem;
+        color: var(--green-500);
+        margin-bottom: 1rem;
+    }
+
+    .success-content h3 {
+        margin: 0 0 0.5rem;
+        font-size: 1.5rem;
+    }
+
+    .success-content p {
+        margin: 0 0 1.5rem;
+        color: var(--gray-600);
+    }
+
+    /* Responsive styles */
+    @media (max-width: 992px) {
+        .contact-container {
+            grid-template-columns: 1fr;
+        }
+    }
+    </style>
+</body>
+</html>
