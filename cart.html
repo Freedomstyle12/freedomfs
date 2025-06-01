@@ -156,7 +156,8 @@ document.addEventListener("DOMContentLoaded", () => {
       console.error("Email error:", err);
     });
 
-     fetch("https://freedomstyle.fwh.is/save_order.php", {
+    // Save to PHP
+fetch("http://freedomstyle12.infinityfreeapp.com/save_order.php", {
   method: "POST",
   headers: { "Content-Type": "application/json" },
   body: JSON.stringify({
@@ -170,6 +171,13 @@ document.addEventListener("DOMContentLoaded", () => {
     items: cart
   })
 })
+.then(response => response.json())
+.then(data => {
+  console.log("Order saved:", data);
+})
+.catch(error => {
+  console.error("Error saving order:", error);
+});
 
 
     // WhatsApp
