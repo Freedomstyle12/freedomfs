@@ -141,22 +141,23 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // EmailJS
-    emailjs.send("freedomfs", "template_ehk1tlp", {
-      customer_name: name,
-      customer_email: email,
-      customer_phone: phone,
-      customer_address: address,
-      order_number: orderNumber,
-      order_date: orderDate,
-      order_details: orderDetails,
-      total_amount: `$${totalAmount.toFixed(2)}`
-    }).then(() => {
-      console.log("Email sent.");
-    }).catch((err) => {
-      console.error("Email error:", err);
-    });
+    // emailjs.send("freedomfs", "template_ehk1tlp", {
+    //   customer_name: name,
+    //   customer_email: email,
+    //   customer_phone: phone,
+    //   customer_address: address,
+    //   order_number: orderNumber,
+    //   order_date: orderDate,
+    //   order_details: orderDetails,
+    //   total_amount: `$${totalAmount.toFixed(2)}`
+    // }).then(() => {
+    //   console.log("Email sent.");
+    // }).catch((err) => {
+    //   console.error("Email error:", err);
+    // });
 
     // Save to PHP
+// Save to PHP
 fetch("http://freedomstyle12.infinityfreeapp.com/save_order.php", {
   method: "POST",
   headers: { "Content-Type": "application/json" },
@@ -171,12 +172,31 @@ fetch("http://freedomstyle12.infinityfreeapp.com/save_order.php", {
     items: cart
   })
 })
-.then(response => response.json())
+.then(res => res.json())
 .then(data => {
-  console.log("Order saved:", data);
+  if (data.success) {
+    console.log("✅ Order saved in database:", data);
+
+    // Clear cart
+    localStorage.removeItem("cart");
+    cart = [];
+    updateCartDisplay();
+
+    // Optionally show a confirmation alert
+    alert("✅ Order saved successfully!");
+
+    // Redirect to confirmation page
+    setTimeout(() => {
+      window.location.href = "order-confirmation.html";
+    }, 2000);
+  } else {
+    console.error("❌ Order save failed:", data.error);
+    alert("There was a problem saving your order. Please try again.");
+  }
 })
 .catch(error => {
-  console.error("Error saving order:", error);
+  console.error("❌ Error saving order:", error);
+  alert("Server error. Please try again later.");
 });
 
 
