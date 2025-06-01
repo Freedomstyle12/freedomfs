@@ -12,7 +12,7 @@ if (
     // Your correct DB credentials:
     $host = "localhost"; // usually stays localhost
     $user = "if0_39132036"; // ✅ your username
-    $password = "fsamiya120208";     // ✅ your password
+    $password = "sfahad120208";     // ✅ your password
     $dbname = "if0_39132036_fns"; // ✅ your full DB name with prefix
 
     $conn = new mysqli($host, $user, $password, $dbname);
