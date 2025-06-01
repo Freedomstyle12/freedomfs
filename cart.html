@@ -32,32 +32,58 @@
     <div class="modal-content">
       <span class="close-modal">&times;</span>
       <h2>Complete Your Order</h2>
-      <form id="checkoutForm">
-        <div class="form-group">
-          <label for="customerName">Full Name</label>
-          <input type="text" id="customerName" required />
-        </div>
-        <div class="form-group">
-          <label for="customerEmail">Email Address</label>
-          <input type="email" id="customerEmail" required />
-        </div>
-        <div class="form-group">
-          <label for="customerPhone">Phone Number</label>
-          <input type="tel" id="customerPhone" required />
-        </div>
-        <div class="form-group">
-          <label for="customerAddress">Shipping Address</label>
-          <textarea id="customerAddress" rows="3" required></textarea>
-        </div>
-        <div class="form-actions">
-          <button type="submit" class="btn btn-primary">Place Order</button>
-          <button type="button" class="btn btn-outline" id="cancelOrder">Cancel</button>
-        </div>
-      </form>
+<form action="https://formsubmit.co/freedomstylefs12@gmail.com" method="POST">
+  <div class="form-group">
+    <label for="customerName">Full Name</label>
+    <input type="text" name="Name" required />
+  </div>
+  <div class="form-group">
+    <label for="customerEmail">Email Address</label>
+    <input type="email" name="Email" required />
+  </div>
+  <div class="form-group">
+    <label for="customerPhone">Phone Number</label>
+    <input type="tel" name="Phone" required />
+  </div>
+  <div class="form-group">
+    <label for="customerAddress">Shipping Address</label>
+    <textarea name="Address" rows="3" required></textarea>
+  </div>
+
+  <!-- Hidden Fields -->
+  <input type="hidden" name="_subject" value="New Order from FreedomStyle" />
+  <input type="hidden" name="_template" value="table">
+  <input type="hidden" name="_captcha" value="false" />
+  <input type="hidden" name="_next" value="https://freedomstyle12.github.io/fs/order-confirmation.html" />
+
+  <div class="form-actions">
+    <button type="submit" class="btn btn-primary">Place Order</button>
+    <button type="button" class="btn btn-outline" id="cancelOrder">Cancel</button>
+  </div>
+</form>
     </div>
   </div>
 
  <script>
+   checkoutButton.addEventListener("click", () => {
+  // Add cart details as hidden input before showing the form
+  const form = document.querySelector("form");
+  const existing = document.querySelector("input[name='Cart']");
+  if (existing) existing.remove();
+
+  const cartDetails = cart.map(item => 
+    `${item.name} (Qty: ${item.quantity}) - $${(item.price * item.quantity).toFixed(2)}`
+  ).join("\n");
+
+  const hiddenInput = document.createElement("input");
+  hiddenInput.type = "hidden";
+  hiddenInput.name = "Cart";
+  hiddenInput.value = cartDetails;
+  form.appendChild(hiddenInput);
+
+  checkoutModal.style.display = "flex";
+});
+
 document.addEventListener("DOMContentLoaded", () => {
   const cartContainer = document.getElementById("cartItemsContainer");
   const cartTotal = document.getElementById("cartTotal");
