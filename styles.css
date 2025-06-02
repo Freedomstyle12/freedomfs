@@ -3044,3 +3044,142 @@
     }
 
 }
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #0a0a0a;
+    color: #f0f0f0;
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(145deg, #0a0a0a 40%, #0f1f3d 100%);
+    padding: 6rem 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    gap: 3rem;
+}
+
+.hero-text-block {
+    flex: 1;
+    animation: fadeInLeft 1s ease;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 1rem;
+}
+
+.highlight {
+    color: #00bfff;
+    text-decoration: underline;
+    text-underline-offset: 6px;
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    color: #ccc;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+/* Buttons */
+.btn {
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.75rem 2rem;
+    border-radius: 50px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: #00bfff;
+    color: #0a0a0a;
+    box-shadow: 0 0 12px #00bfff80;
+}
+
+.btn-primary:hover {
+    background-color: #0099cc;
+    transform: scale(1.05);
+}
+
+.btn-outline {
+    border: 2px solid #00bfff;
+    color: #00bfff;
+    background: transparent;
+}
+
+.btn-outline:hover {
+    background-color: #00bfff;
+    color: #0a0a0a;
+    transform: scale(1.05);
+}
+
+/* Image Section */
+.hero-visual {
+    flex: 1;
+    animation: fadeInRight 1s ease;
+}
+
+.hero-image {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 1.5rem;
+    box-shadow: 0 15px 35px rgba(0, 191, 255, 0.25);
+    transition: transform 0.3s ease;
+}
+
+.hero-image:hover {
+    transform: scale(1.03);
+}
+
+/* Animations */
+@keyframes fadeInLeft {
+    from { opacity: 0; transform: translateX(-50px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeInRight {
+    from { opacity: 0; transform: translateX(50px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .hero-image {
+        margin-top: 2rem;
+        max-width: 90%;
+    }
+}
