@@ -1993,7 +1993,9 @@
       margin-left: auto;
       margin-right: auto;
     }
-    
+     .hero-content h1 {
+        margin-top: 20px;
+     }
     .footer-top,
     .footer-main {
       grid-template-columns: 1fr;
@@ -2140,11 +2142,17 @@
       flex-direction: column;
       gap: 1rem;
     }
-    
+       .hero-content h1 {
+     margin-top: 60px;
+     }   
     .hero-social-proof {
       flex-direction: column;
       gap: 1rem;
     }
+     .hero-text h1 {
+    margin-bottom: -1.5rem;
+  }
+  
     
     .product-grid,
     .blog-grid {
@@ -2495,6 +2503,9 @@
       align-items: center;
       gap: 1rem;
   }
+    .hero-content h1 {
+     margin-top: 20px;
+}
 }
 
 /* Animation for the confirmation icon */
@@ -2749,7 +2760,9 @@
     color: var(--gray-500);
     font-size: 0.875rem;
 }
-
+ .hero-content h1 {
+     margin-top: 20px;
+}
 .payment-icons {
     display: flex;
     justify-content: center;
@@ -2875,13 +2888,16 @@
     outline: none;
     box-shadow: 0 0 0 2px rgba(var(--primary-rgb), 0.2);
 }
-
+ .hero-content h1 {
+     margin-top: 20px;
+}
 .form-actions {
     display: flex;
     gap: 1rem;
     justify-content: flex-end;
     margin-top: 2rem;
 }
+
 
 @media (max-width: 576px) {
     .form-actions {
@@ -2993,6 +3009,9 @@
     gap: 1.5rem;
     flex-wrap: wrap;
 }
+  .hero-content h1 {
+     margin-top: 20px;
+}
 
 .contact-info-links a {
     color: var(--primary-600);
@@ -3020,4 +3039,8 @@
         align-items: center;
         gap: 1rem;
     }
+   .hero-content h1 {
+     margin-top: 60px;
+    }
+
 }
