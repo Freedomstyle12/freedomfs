@@ -518,7 +518,9 @@
    
     margin-bottom: 1.5rem;
   }
-  
+  .hero-title{
+    margin-top: 30px;
+  }  
   .hero-text p {
     font-size: 1.25rem;
     color: var(--gray-600);
@@ -1958,7 +1960,9 @@
     .container {
       padding: 0 1.5rem;
     }
-    
+     h1.hero-title {
+       margin-top: 75px;
+    }  
     .hero-content,
     .contact-container {
       gap: 3rem;
@@ -1972,7 +1976,9 @@
     .contact-container {
       grid-template-columns: 1fr;
     }
-    
+   h1.hero-title {
+       margin-top: 75px;
+    }      
     .hero-text {
       text-align: center;
     }
@@ -2032,7 +2038,9 @@
     h1 {
       font-size: clamp(2rem, 5vw, 2.5rem);
     }
-    
+     h1.hero-title {
+       margin-top: 75px;
+    }  
     .nav-links,
     .nav-icons {
       display: none;
@@ -2141,6 +2149,9 @@
     .container {
       padding: 0 1rem;
     }
+      h1.hero-title {
+       margin-top: 75px;
+    }  
     
     .hero-buttons {
       flex-direction: column;
