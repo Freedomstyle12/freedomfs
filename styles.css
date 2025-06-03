@@ -183,6 +183,7 @@
   h2 {
     font-size: clamp(2rem, 4vw, 2.5rem);
     letter-spacing: -0.015em;
+     color: white;
   }
   
   h3 {
