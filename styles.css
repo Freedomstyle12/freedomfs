@@ -510,10 +510,12 @@
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
     align-items: center;
-    margin-top: 60px;
+    margin-top: 80px;
   }
   
   .hero-text h1 {
+    margin-top: 60px;
+   
     margin-bottom: 1.5rem;
   }
   
@@ -1960,6 +1962,7 @@
     .hero-content,
     .contact-container {
       gap: 3rem;
+       margin-top: 60px
     }
   }
   
@@ -1994,7 +1997,8 @@
       margin-right: auto;
     }
      .hero-content h1 {
-        margin-top: 20px;
+        margin-top: 60px;
+        
      }
     .footer-top,
     .footer-main {
