@@ -48,27 +48,243 @@
     </nav>
 
     <!-- Main Content -->
-    <main>
+   <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FreedomStyle - Modern Fashion Store</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+</head>
+<body>
+  <!-- Navigation -->
+  <!-- ...unchanged nav section... -->
+
+  <!-- Main Content -->
+  <main>
     <!-- Hero Section -->
     <section class="hero-section">
-        <div class="container hero-container">
-            <div class="hero-text-block">
-                <h1 class="hero-title">
-                    Express Your Style <span class="highlight">Freedom</span>
-                </h1>
-                <p class="hero-subtitle">
-                    Discover our premium collection of modern, comfortable clothing designed for the confident individual.
-                </p>
-                <div class="hero-buttons">
-                    <a href="shop.html" class="btn btn-primary">Shop Now</a>
-                    <a href="collections.html" class="btn btn-outline">View Collections</a>
-                </div>
-            </div>
-<!--             <div class="hero-visual">
-                <img src="Screenshot.png" alt="FreedomStyle Fashion Model" class="hero-image">
-            </div> -->
+      <div class="container hero-container">
+        <div class="hero-text-block">
+          <h1 class="hero-title">Express Your Style <span class="highlight">Freedom</span></h1>
+          <p class="hero-subtitle">Discover our premium collection of modern, comfortable clothing designed for the confident individual.</p>
+          <div class="hero-buttons">
+            <a href="shop.html" class="btn btn-primary">Shop Now</a>
+            <a href="collections.html" class="btn btn-outline">View Collections</a>
+          </div>
         </div>
+        <div class="hero-visual">
+          <img src="https://images.unsplash.com/photo-1618354691214-052e30e50b8f" alt="Male and Female Fashion Models" class="hero-image"/>
+        </div>
+      </div>
     </section>
+
+    <!-- Featured Categories -->
+    <section class="featured-categories">
+      <div class="container">
+        <div class="section-header">
+          <h2>Featured Categories</h2>
+          <p>Explore our most popular clothing categories</p>
+        </div>
+        <div class="category-grid">
+          <a href="category.html?category=shirts" class="category-card">
+            <div class="category-image">
+              <img src="https://images.unsplash.com/photo-1602810319123-7df31f8c2b6f" alt="Shirts - Male Model"/>
+            </div>
+            <div class="category-title">
+              <h3>Shirts</h3>
+              <span class="arrow-icon"><i class="fas fa-arrow-right"></i></span>
+            </div>
+          </a>
+          <a href="category.html?category=pants" class="category-card">
+            <div class="category-image">
+              <img src="https://images.unsplash.com/photo-1520975916090-3105956f8b8e" alt="Pants - Female Model"/>
+            </div>
+            <div class="category-title">
+              <h3>Pants</h3>
+              <span class="arrow-icon"><i class="fas fa-arrow-right"></i></span>
+            </div>
+          </a>
+          <a href="category.html?category=jackets" class="category-card">
+            <div class="category-image">
+              <img src="https://images.unsplash.com/photo-1514996937319-344454492b37" alt="Jackets - Model"/>
+            </div>
+            <div class="category-title">
+              <h3>Jackets</h3>
+              <span class="arrow-icon"><i class="fas fa-arrow-right"></i></span>
+            </div>
+          </a>
+          <a href="category.html?category=accessories" class="category-card">
+            <div class="category-image">
+              <img src="https://images.unsplash.com/photo-1623282033815-4304a95e6186" alt="Accessories on Models"/>
+            </div>
+            <div class="category-title">
+              <h3>Accessories</h3>
+              <span class="arrow-icon"><i class="fas fa-arrow-right"></i></span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="featured-products">
+      <div class="container">
+        <div class="section-header">
+          <h2>Featured Products</h2>
+          <p>Our best selling styles this season</p>
+        </div>
+        <div class="product-grid">
+          <div class="product-card">
+            <div class="product-badge">New</div>
+            <div class="product-image">
+              <img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e" alt="Classic Button-Up Shirt"/>
+              <div class="product-actions">
+                <button class="btn-circle"><i class="fas fa-eye"></i></button>
+                <button class="btn-circle"><i class="fas fa-heart"></i></button>
+                <button class="btn-circle add-to-cart-btn"><i class="fas fa-shopping-cart"></i></button>
+              </div>
+            </div>
+            <div class="product-info">
+              <h3 class="product-title">Classic Button-Up Shirt</h3>
+              <div class="product-price">$45.00</div>
+              <div class="product-rating">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                <span>(24)</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-badge sale">Sale</div>
+            <div class="product-image">
+              <img src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246" alt="Premium Denim Jeans - Female"/>
+              <div class="product-actions">
+                <button class="btn-circle"><i class="fas fa-eye"></i></button>
+                <button class="btn-circle"><i class="fas fa-heart"></i></button>
+                <button class="btn-circle add-to-cart-btn"><i class="fas fa-shopping-cart"></i></button>
+              </div>
+            </div>
+            <div class="product-info">
+              <h3 class="product-title">Premium Denim Jeans</h3>
+              <div class="product-price"><span class="original-price">$75.00</span> $59.99</div>
+              <div class="product-rating">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                <span>(41)</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-image">
+              <img src="https://images.unsplash.com/photo-1593032457869-77b78c5a9b2b" alt="Classic Leather Jacket"/>
+              <div class="product-actions">
+                <button class="btn-circle"><i class="fas fa-eye"></i></button>
+                <button class="btn-circle"><i class="fas fa-heart"></i></button>
+                <button class="btn-circle add-to-cart-btn"><i class="fas fa-shopping-cart"></i></button>
+              </div>
+            </div>
+            <div class="product-info">
+              <h3 class="product-title">Classic Leather Jacket</h3>
+              <div class="product-price">$129.99</div>
+              <div class="product-rating">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+                <span>(18)</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-badge best">Best Seller</div>
+            <div class="product-image">
+              <img src="https://images.unsplash.com/photo-1612423284934-b5d86fd6b65c" alt="Cotton Graphic T-Shirt"/>
+              <div class="product-actions">
+                <button class="btn-circle"><i class="fas fa-eye"></i></button>
+                <button class="btn-circle"><i class="fas fa-heart"></i></button>
+                <button class="btn-circle add-to-cart-btn"><i class="fas fa-shopping-cart"></i></button>
+              </div>
+            </div>
+            <div class="product-info">
+              <h3 class="product-title">Cotton Graphic T-Shirt</h3>
+              <div class="product-price">$32.99</div>
+              <div class="product-rating">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                <span>(87)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="view-all-container">
+          <a href="shop.html" class="btn btn-outline">View All Products</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Collections Banner -->
+    <section class="collections-banner">
+      <div class="container">
+        <div class="banner-grid">
+          <div class="banner-item large">
+            <div class="banner-image">
+              <img src="https://images.unsplash.com/photo-1618354691214-052e30e50b8f" alt="Summer Collection"/>
+            </div>
+            <div class="banner-content">
+              <h3>Summer Collection 2025</h3>
+              <p>Light fabrics, vibrant colors, and effortless style</p>
+              <a href="collections.html" class="btn btn-light">Explore Collection</a>
+            </div>
+          </div>
+          <div class="banner-item">
+            <div class="banner-image">
+              <img src="https://images.unsplash.com/photo-1520975916090-3105956f8b8e" alt="New Arrivals"/>
+            </div>
+            <div class="banner-content">
+              <h3>New Arrivals</h3>
+              <p>Fresh styles added weekly</p>
+              <a href="category.html?category=new-arrivals" class="btn btn-sm btn-light">Shop Now</a>
+            </div>
+          </div>
+          <div class="banner-item">
+            <div class="banner-image">
+              <img src="https://images.unsplash.com/photo-1623282033815-4304a95e6186" alt="Accessories"/>
+            </div>
+            <div class="banner-content">
+              <h3>Accessories</h3>
+              <p>Complete your look</p>
+              <a href="category.html?category=accessories" class="btn btn-sm btn-light">Shop Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+      <div class="container">
+        <div class="newsletter-content">
+          <div class="newsletter-image">
+            <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c" alt="Subscribe to our newsletter"/>
+          </div>
+          <div class="newsletter-text">
+            <h2>Stay Updated</h2>
+            <p>Subscribe to our newsletter to receive updates on new products, special offers, and styling tips.</p>
+            <form class="newsletter-form">
+              <input type="email" placeholder="Your email address" required />
+              <button type="submit" class="btn btn-primary">Subscribe</button>
+            </form>
+            <p class="newsletter-privacy">By subscribing, you agree to our <a href="#">Privacy Policy</a>. We respect your privacy.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <!-- ...unchanged footer... -->
+</body>
+</html>
+
 </main>
 
         <!-- Featured Categories -->
